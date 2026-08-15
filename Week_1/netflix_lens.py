@@ -305,13 +305,23 @@ def title_details(item: pd.Series) -> None:
     with right:
         st.subheader(item.title)
         st.caption(f"{item.type} · {item.release_year if pd.notna(item.release_year) else 'Unknown year'} · {item.duration or 'Duration unavailable'}")
-        st.markdown(f"**Rating:** {item.rating or 'Not rated'}  \\\n+**Director:** {item.director or 'Not listed'}  \\\n+**Cast:** {item.cast or 'Not listed'}")
+        st.markdown(
+            f"**Rating:** {item.rating or 'Not rated'}  \n"
+            f"**Director:** {item.director or 'Not listed'}  \n"
+            f"**Cast:** {item.cast or 'Not listed'}"
+        )
         st.write(item.description or "No description supplied.")
         st.metric("IMDb stars", f"{item.imdb_rating:.1f}/10" if pd.notna(item.imdb_rating) else "Not enriched")
         if item.type.lower() == "movie":
             st.metric("Lifetime box office", item.lifetime_box_office_collection if pd.notna(item.lifetime_box_office_collection) else "Not enriched")
         st.metric("Award wins", int(item.number_awards_won))
         st.caption(f"OMDb awards: {item.awards_summary}")
+
+
+@st.dialog("Title details", width="large")
+def title_details_dialog(item: pd.Series) -> None:
+    """Show title metadata without moving the user away from the selected card."""
+    title_details(item)
 
 
 st.markdown("""
@@ -328,12 +338,19 @@ st.markdown("""
   .top-card img { display: block; width: 100%; height: 245px; object-fit: cover; background: #17172a; }
   .top-card__title { min-height: 3.4rem; padding: .55rem .65rem 0; color: #f9f7f2; font-weight: 650; line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
   .top-card__rating { padding: .15rem .65rem .65rem; color: #f5c96a; font-size: .85rem; }
+  .recommendation-card { height: 365px; overflow: hidden; background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.12); border-radius: .75rem; }
+  .recommendation-card img { display: block; width: 100%; height: 245px; object-fit: cover; background: #17172a; }
+  .recommendation-card__title { height: 3.35rem; padding: .55rem .65rem 0; color: #f9f7f2; font-weight: 650; line-height: 1.25; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .recommendation-card__meta { height: 2.9rem; padding: .1rem .65rem .6rem; color: #bfc0ce; font-size: .82rem; line-height: 1.45; overflow: hidden; }
+  .recommendation-card__stars { color: #f5c96a; }
 </style>
 """, unsafe_allow_html=True)
 
 st.markdown("<div class='hero'><h1>Netflix Lens</h1><p>Your cinematic discovery room — explore, filter, and find the next great watch.</p></div>", unsafe_allow_html=True)
 
+filter_panel = st.sidebar.container()
 with st.sidebar:
+    st.divider()
     st.header("Data studio")
     uploaded = st.file_uploader("Upload Netflix CSV", type="csv", help="Your file must retain the standard Netflix title columns.")
     st.caption("The bundled Netflix dataset is used until you upload a file.")
@@ -377,18 +394,14 @@ with st.sidebar:
     else:
         st.info("Set `OMDB_API_KEY` to enable verified poster, box office, award, and IMDb-rating enrichment.")
 
-st.markdown("#### Refine your discovery")
-filter_type, filter_rating, filter_genre, filter_date = st.columns([1, 1.35, 2, 1.65])
 available_types = sorted(data["type"].replace("", pd.NA).dropna().unique())
 ratings = sorted(data["rating"].replace("", pd.NA).dropna().unique())
 all_genres = sorted({genre.strip() for cell in data["listed_in"] for genre in cell.split(",") if genre.strip()})
-with filter_type:
+with filter_panel:
+    st.header("Refine your discovery")
     types = st.multiselect("Format", available_types, default=available_types)
-with filter_rating:
     selected_ratings = st.multiselect("Maturity rating", ratings, default=ratings)
-with filter_genre:
     selected_genres = st.multiselect("Genre", all_genres, placeholder="All genres")
-with filter_date:
     dated = data["date_added"].dropna()
     if not dated.empty:
         date_range = st.date_input("Added to Netflix", value=(dated.min().date(), dated.max().date()), min_value=dated.min().date(), max_value=dated.max().date())
@@ -410,16 +423,80 @@ if query:
     if recs.empty:
         st.info("No close matches in the current filters. Widen the filters or try different words.")
     else:
+        recommendation_ids = set(recs["show_id"])
+        pending_recommendation_ids = set(
+            recs.loc[
+                recs["imdb_rating"].isna() & ~recs["omdb_lookup_attempted"],
+                "show_id",
+            ]
+        )
+        if key:
+            if pending_recommendation_ids and st.button(
+                f"Enrich these recommendations ({len(pending_recommendation_ids)})",
+                key="enrich_recommendations",
+                use_container_width=False,
+            ):
+                progress = st.progress(
+                    0,
+                    text=f"Enriching {len(pending_recommendation_ids)} recommendation(s) with OMDb…",
+                )
+                data, matched = enrich_with_omdb(
+                    data,
+                    key,
+                    maximum=len(pending_recommendation_ids),
+                    progress_bar=progress,
+                    candidate_ids=recommendation_ids,
+                    only_unattempted=True,
+                )
+                progress.empty()
+                filtered.update(data)
+                recs = make_recommendations(filtered, query)
+                st.session_state["enriched_data"] = data
+                st.session_state["enriched_source"] = source_id
+                if usage_metric is not None:
+                    updated_usage = omdb_usage_today(key)
+                    daily_limit = omdb_daily_limit()
+                    usage_metric.metric(
+                        "OMDb requests used today",
+                        f"{updated_usage:,} / {daily_limit:,}",
+                    )
+                    usage_note.caption(
+                        f"Estimated requests remaining: {max(0, daily_limit - updated_usage):,}. "
+                        "This dashboard tracks only its own requests for this API key."
+                    )
+                st.success(
+                    f"OMDb enrichment complete: matched {matched} of "
+                    f"{len(pending_recommendation_ids)} recommendation(s)."
+                )
+            elif not pending_recommendation_ids:
+                st.caption("OMDb lookup is complete for these recommendations.")
+        else:
+            st.info("Set `OMDB_API_KEY` to enrich recommendation details with OMDb.")
+
         cols = st.columns(min(4, len(recs)))
         for idx, (_, item) in enumerate(recs.iterrows()):
             with cols[idx % len(cols)]:
-                st.image(item.poster_image, use_container_width=True)
-                st.markdown(f"**{item.title}**")
-                st.caption(f"{item.type} · {item.rating or 'Unrated'}")
-                if item.show_id in st.session_state.get("watchlist_ids", load_watchlist()):
-                    st.caption("✓ Saved to My Watchlist")
-                elif st.button("Save to Watchlist", key=f"recommendation_save_{item.show_id}", use_container_width=True):
-                    add_to_watchlist(item.show_id)
+                stars = f"{item.imdb_rating:.1f}/10 IMDb" if pd.notna(item.imdb_rating) else "IMDb not available"
+                title = escape(str(item.title))
+                image_url = escape(str(item.poster_image), quote=True)
+                media_meta = escape(f"{item.type} · {item.rating or 'Unrated'}")
+                stars_text = escape(stars)
+                st.markdown(
+                    f'<div class="recommendation-card"><img src="{image_url}" alt="{title} poster">'
+                    f'<div class="recommendation-card__title">{title}</div>'
+                    f'<div class="recommendation-card__meta">{media_meta}<br>'
+                    f'<span class="recommendation-card__stars">{stars_text}</span></div></div>',
+                    unsafe_allow_html=True,
+                )
+                detail_action, save_action = st.columns(2)
+                with detail_action:
+                    if st.button("Details", key=f"recommendation_details_{item.show_id}", use_container_width=True):
+                        title_details_dialog(item)
+                with save_action:
+                    if item.show_id in st.session_state.get("watchlist_ids", load_watchlist()):
+                        st.button("Saved", key=f"recommendation_saved_{item.show_id}", disabled=True, use_container_width=True)
+                    elif st.button("Save", key=f"recommendation_save_{item.show_id}", use_container_width=True):
+                        add_to_watchlist(item.show_id)
 
 st.divider()
 m1, m2, m3, m4 = st.columns(4)
@@ -459,7 +536,12 @@ with overview:
             ]
         page_size = 25
         page_count = max(1, (len(genre_titles) + page_size - 1) // page_size)
-        page = st.number_input("Results page", min_value=1, max_value=page_count, value=1, step=1, key="genre_results_page")
+        pagination_context = (selected_genre_chart, genre_search.strip())
+        if st.session_state.get("genre_pagination_context") != pagination_context:
+            st.session_state["genre_pagination_context"] = pagination_context
+            st.session_state["genre_results_page"] = 1
+        page = min(max(1, st.session_state.get("genre_results_page", 1)), page_count)
+        st.session_state["genre_results_page"] = page
         page_rows = genre_titles.iloc[(page - 1) * page_size:page * page_size]
         st.caption(f"{len(genre_titles):,} matching titles · showing up to 25 at a time. Select any column heading to sort.")
         st.dataframe(
@@ -468,6 +550,20 @@ with overview:
             hide_index=True,
             height=680,
         )
+        previous_page, page_status, next_page = st.columns([1, 2, 1])
+        with previous_page:
+            if st.button("← Back", key="genre_page_back", disabled=page == 1, use_container_width=True):
+                st.session_state["genre_results_page"] = page - 1
+                st.rerun()
+        with page_status:
+            st.markdown(
+                f"<div style='text-align:center; padding:.45rem 0;'>Page <b>{page}</b> of <b>{page_count}</b></div>",
+                unsafe_allow_html=True,
+            )
+        with next_page:
+            if st.button("Next →", key="genre_page_next", disabled=page == page_count, use_container_width=True):
+                st.session_state["genre_results_page"] = page + 1
+                st.rerun()
 
 with top_titles:
     movie_candidates = filtered[filtered.type.eq("Movie")].sort_values("release_year", ascending=False).head(10)
@@ -527,18 +623,12 @@ with top_titles:
                         detail_action, save_action = st.columns(2)
                         with detail_action:
                             if st.button("View details", key=f"top_{label}_{item.show_id}", use_container_width=True):
-                                st.session_state["detail_id"] = item.show_id
+                                title_details_dialog(item)
                         with save_action:
                             if item.show_id in st.session_state.get("watchlist_ids", load_watchlist()):
                                 st.button("Saved", key=f"top_saved_{label}_{item.show_id}", disabled=True, use_container_width=True)
                             elif st.button("Save", key=f"top_save_{label}_{item.show_id}", use_container_width=True):
                                 add_to_watchlist(item.show_id)
-
-    selected_top_id = st.session_state.get("detail_id")
-    if selected_top_id in set(filtered["show_id"]):
-        st.divider()
-        st.markdown("#### Selected title")
-        title_details(filtered[filtered["show_id"].eq(selected_top_id)].iloc[0])
 
 def people_section(data: pd.DataFrame, column: str, heading: str) -> None:
     people = split_people(data, column)
