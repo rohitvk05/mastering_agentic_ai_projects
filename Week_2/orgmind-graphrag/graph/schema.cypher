@@ -1,0 +1,13 @@
+CREATE CONSTRAINT person_id IF NOT EXISTS FOR (n:Person) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT team_id IF NOT EXISTS FOR (n:Team) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT project_id IF NOT EXISTS FOR (n:Project) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT skill_id IF NOT EXISTS FOR (n:Skill) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT technology_id IF NOT EXISTS FOR (n:Technology) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT decision_id IF NOT EXISTS FOR (n:Decision) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT meeting_id IF NOT EXISTS FOR (n:Meeting) REQUIRE n.id IS UNIQUE;
+CREATE CONSTRAINT document_id IF NOT EXISTS FOR (n:Document) REQUIRE n.id IS UNIQUE;
+
+CREATE INDEX person_name IF NOT EXISTS FOR (n:Person) ON (n.name);
+CREATE INDEX project_name IF NOT EXISTS FOR (n:Project) ON (n.name);
+CREATE INDEX technology_name IF NOT EXISTS FOR (n:Technology) ON (n.name);
+CREATE INDEX decision_title IF NOT EXISTS FOR (n:Decision) ON (n.title);

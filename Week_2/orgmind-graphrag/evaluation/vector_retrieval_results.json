@@ -1,0 +1,455 @@
+[
+  {
+    "id": 1,
+    "category": "single_fact",
+    "question": "What database does Project Phoenix use for its online feature cache?",
+    "expected_answer": "Redis",
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8992114067077637,
+        "file_name": "decision_d004.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d004.md",
+        "text": "---\ndoc_id: doc_decision_d004\ndoc_type: architecture_decision\nentity_id: decision_d004\nproject_id: project_phoenix\ndate: 2026-04-03\n---\n# Use Redis for Phoenix online feature cache\n\n**Decision ID:** decision_d004  \n**Project:** Project Phoenix  \n**Technology:** Redis  \n**Proposed by:** Bob Singh  \n**Approved by:** Farah Khan  \n**Date:** 2026-04-03\n\n## Decision\nUse Redis for Phoenix online feature cache.\n\n## Rationale\nPhoenix required predictable sub-20ms feature lookups during recommendation ranking. Redis met latency and operational requirements.\n\n## Alternatives considered\nRead directly from PostgreSQL, In-process cache only"
+      },
+      {
+        "rank": 2,
+        "score": 0.880989134311676,
+        "file_name": "recommendation_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/recommendation_architecture.md",
+        "text": "---\ndoc_id: doc_tech_recommendation_architecture\ndoc_type: technical_document\nowner: Recommendations\n---\n# Recommendation Architecture Overview\n\nProject Phoenix serves real-time personalized recommendations. Farah Khan leads the project.\n\nPhoenix uses Kafka for behavior events, Redis for online feature caching, Kubernetes for serving, and Python for model and service code. Bob Singh proposed Redis for the online feature cache. Carol Martinez proposed Kafka for the event bus. Farah Khan approved both decisions."
+      },
+      {
+        "rank": 3,
+        "score": 0.877557635307312,
+        "file_name": "project_phoenix.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_phoenix.md",
+        "text": "---\ndoc_id: doc_project_phoenix\ndoc_type: project_overview\nentity_id: project_phoenix\nowner: Recommendations\n---\n# Project Phoenix\n\n**Status:** Production  \n**Owning team:** Recommendations  \n**Project lead:** Farah Khan  \n**Core technologies:** Kafka, Kubernetes, Redis, Python\n\n## Purpose\nServe real-time personalized product recommendations using streaming behavior and low-latency feature access.\n\n## Contributors\nAlice Chen, Bob Singh, Carol Martinez, Farah Khan, Hannah Brooks, Julia Patel"
+      },
+      {
+        "rank": 4,
+        "score": 0.865165114402771,
+        "file_name": "meeting_m004.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m004.md",
+        "text": "---\ndoc_id: doc_meeting_m004\ndoc_type: meeting_notes\nentity_id: meeting_m004\ndate: 2026-04-11\n---\n# Phoenix serving architecture review\n\n**Date:** 2026-04-11  \n**Projects:** Project Phoenix  \n**Participants:** Farah Khan, Bob Singh, Carol Martinez, Hannah Brooks, Julia Patel\n\n## Decisions discussed\n- Use Redis for Phoenix online feature cache (decision_d004)\n- Use Kafka as Phoenix behavior event bus (decision_d005)\n\n## Notes\n- Bob Singh proposed **Use Redis for Phoenix online feature cache** and Farah Khan approved it.\n- Carol Martinez proposed **Use Kafka as Phoenix behavior event bus** and Farah Khan approved it."
+      },
+      {
+        "rank": 5,
+        "score": 0.8522063493728638,
+        "file_name": "decision_d005.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d005.md",
+        "text": "---\ndoc_id: doc_decision_d005\ndoc_type: architecture_decision\nentity_id: decision_d005\nproject_id: project_phoenix\ndate: 2026-04-11\n---\n# Use Kafka as Phoenix behavior event bus\n\n**Decision ID:** decision_d005  \n**Project:** Project Phoenix  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Farah Khan  \n**Date:** 2026-04-11\n\n## Decision\nUse Kafka as Phoenix behavior event bus.\n\n## Rationale\nRecommendation features needed near-real-time user behavior with replay for backfills. Kafka aligned Phoenix with the company streaming standard.\n\n## Alternatives considered\nBatch files every hour, Point-to-point queues"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "single_fact",
+    "question": "What is the purpose of Project Atlas?",
+    "expected_answer": "Modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8805092573165894,
+        "file_name": "project_atlas.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_atlas.md",
+        "text": "---\ndoc_id: doc_project_atlas\ndoc_type: project_overview\nentity_id: project_atlas\nowner: Search\n---\n# Project Atlas\n\n**Status:** Production  \n**Owning team:** Search  \n**Project lead:** Alice Chen  \n**Core technologies:** Kafka, Elasticsearch, Python, Kubernetes\n\n## Purpose\nModernize product search ranking with fresh behavioral signals and a unified retrieval stack.\n\n## Contributors\nAlice Chen, Bob Singh, George Liu, Hannah Brooks"
+      },
+      {
+        "rank": 2,
+        "score": 0.8673334121704102,
+        "file_name": "search_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/search_architecture.md",
+        "text": "---\ndoc_id: doc_tech_search_architecture\ndoc_type: technical_document\nowner: Search\n---\n# Search Architecture Overview\n\nProject Atlas is the Search team's modernization program for product retrieval and ranking. Alice Chen leads the project.\n\nAtlas uses Elasticsearch as the retrieval engine, Python for ranking services, Kafka for change feeds, and Kubernetes for service deployment. George Liu owns index mapping and analyzer design. Alice Chen approved the Kafka, Elasticsearch, and Kubernetes architecture decisions for Atlas."
+      },
+      {
+        "rank": 3,
+        "score": 0.8525615334510803,
+        "file_name": "meeting_m002.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m002.md",
+        "text": "---\ndoc_id: doc_meeting_m002\ndoc_type: meeting_notes\nentity_id: meeting_m002\ndate: 2026-02-28\n---\n# Atlas relevance schema review\n\n**Date:** 2026-02-28  \n**Projects:** Project Atlas  \n**Participants:** Alice Chen, George Liu, Bob Singh\n\n## Decisions discussed\n- Standardize Elasticsearch mappings for Atlas (decision_d002)\n\n## Notes\n- George Liu proposed **Standardize Elasticsearch mappings for Atlas** and Alice Chen approved it."
+      },
+      {
+        "rank": 4,
+        "score": 0.8515032529830933,
+        "file_name": "decision_d002.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d002.md",
+        "text": "---\ndoc_id: doc_decision_d002\ndoc_type: architecture_decision\nentity_id: decision_d002\nproject_id: project_atlas\ndate: 2026-02-28\n---\n# Standardize Elasticsearch mappings for Atlas\n\n**Decision ID:** decision_d002  \n**Project:** Project Atlas  \n**Technology:** Elasticsearch  \n**Proposed by:** George Liu  \n**Approved by:** Alice Chen  \n**Date:** 2026-02-28\n\n## Decision\nStandardize Elasticsearch mappings for Atlas.\n\n## Rationale\nInconsistent field mappings caused relevance drift across indexes. A shared template made analyzers and ranking fields predictable.\n\n## Alternatives considered\nPer-index mappings, Schema-on-read"
+      },
+      {
+        "rank": 5,
+        "score": 0.8447561264038086,
+        "file_name": "meeting_m001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m001.md",
+        "text": "---\ndoc_id: doc_meeting_m001\ndoc_type: meeting_notes\nentity_id: meeting_m001\ndate: 2026-02-12\n---\n# Atlas architecture review\n\n**Date:** 2026-02-12  \n**Projects:** Project Atlas  \n**Participants:** Alice Chen, Carol Martinez, George Liu, Hannah Brooks\n\n## Decisions discussed\n- Adopt Kafka for Atlas change feed (decision_d001)\n\n## Notes\n- Carol Martinez proposed **Adopt Kafka for Atlas change feed** and Alice Chen approved it."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "semantic",
+    "question": "Why did Project Atlas adopt Kafka?",
+    "expected_answer": "Atlas needed replayable, ordered product and behavior updates and wanted to decouple producers from ranking consumers.",
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.9115989208221436,
+        "file_name": "decision_d001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d001.md",
+        "text": "---\ndoc_id: doc_decision_d001\ndoc_type: architecture_decision\nentity_id: decision_d001\nproject_id: project_atlas\ndate: 2026-02-12\n---\n# Adopt Kafka for Atlas change feed\n\n**Decision ID:** decision_d001  \n**Project:** Project Atlas  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Alice Chen  \n**Date:** 2026-02-12\n\n## Decision\nAdopt Kafka for Atlas change feed.\n\n## Rationale\nAtlas needed replayable, ordered product and behavior updates. Kafka provided durable event history and decoupled producers from ranking consumers.\n\n## Alternatives considered\nDirect database polling, Managed queue without replay"
+      },
+      {
+        "rank": 2,
+        "score": 0.8825188875198364,
+        "file_name": "streaming_platform_standard.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/streaming_platform_standard.md",
+        "text": "---\ndoc_id: doc_tech_streaming_standard\ndoc_type: technical_document\nowner: Data Platform\n---\n# Streaming Platform Standard\n\nAcme AI standardizes high-volume event streaming on Kafka when replay, ordered partitions, and multiple independent consumers are required.\n\nCarol Martinez is the primary technical contact for Kafka architecture. She proposed the Kafka decisions for both Project Atlas and Project Phoenix and maintains the organization-wide streaming guidance.\n\nProject Atlas uses Kafka for product and behavioral changes. Project Phoenix uses Kafka for near-real-time behavior events. Project Nova also consumes Kafka events for risk signals, while Project Mercury publishes settlement events."
+      },
+      {
+        "rank": 3,
+        "score": 0.8802945613861084,
+        "file_name": "meeting_m001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m001.md",
+        "text": "---\ndoc_id: doc_meeting_m001\ndoc_type: meeting_notes\nentity_id: meeting_m001\ndate: 2026-02-12\n---\n# Atlas architecture review\n\n**Date:** 2026-02-12  \n**Projects:** Project Atlas  \n**Participants:** Alice Chen, Carol Martinez, George Liu, Hannah Brooks\n\n## Decisions discussed\n- Adopt Kafka for Atlas change feed (decision_d001)\n\n## Notes\n- Carol Martinez proposed **Adopt Kafka for Atlas change feed** and Alice Chen approved it."
+      },
+      {
+        "rank": 4,
+        "score": 0.8755871653556824,
+        "file_name": "search_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/search_architecture.md",
+        "text": "---\ndoc_id: doc_tech_search_architecture\ndoc_type: technical_document\nowner: Search\n---\n# Search Architecture Overview\n\nProject Atlas is the Search team's modernization program for product retrieval and ranking. Alice Chen leads the project.\n\nAtlas uses Elasticsearch as the retrieval engine, Python for ranking services, Kafka for change feeds, and Kubernetes for service deployment. George Liu owns index mapping and analyzer design. Alice Chen approved the Kafka, Elasticsearch, and Kubernetes architecture decisions for Atlas."
+      },
+      {
+        "rank": 5,
+        "score": 0.8733134865760803,
+        "file_name": "project_atlas.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_atlas.md",
+        "text": "---\ndoc_id: doc_project_atlas\ndoc_type: project_overview\nentity_id: project_atlas\nowner: Search\n---\n# Project Atlas\n\n**Status:** Production  \n**Owning team:** Search  \n**Project lead:** Alice Chen  \n**Core technologies:** Kafka, Elasticsearch, Python, Kubernetes\n\n## Purpose\nModernize product search ranking with fresh behavioral signals and a unified retrieval stack.\n\n## Contributors\nAlice Chen, Bob Singh, George Liu, Hannah Brooks"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "relationship",
+    "question": "Who worked on Project Phoenix and also has Kubernetes experience?",
+    "expected_answer": [
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8951500654220581,
+        "file_name": "project_phoenix.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_phoenix.md",
+        "text": "---\ndoc_id: doc_project_phoenix\ndoc_type: project_overview\nentity_id: project_phoenix\nowner: Recommendations\n---\n# Project Phoenix\n\n**Status:** Production  \n**Owning team:** Recommendations  \n**Project lead:** Farah Khan  \n**Core technologies:** Kafka, Kubernetes, Redis, Python\n\n## Purpose\nServe real-time personalized product recommendations using streaming behavior and low-latency feature access.\n\n## Contributors\nAlice Chen, Bob Singh, Carol Martinez, Farah Khan, Hannah Brooks, Julia Patel"
+      },
+      {
+        "rank": 2,
+        "score": 0.8919565677642822,
+        "file_name": "kubernetes_service_standard.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/kubernetes_service_standard.md",
+        "text": "---\ndoc_id: doc_tech_kubernetes_standard\ndoc_type: technical_document\nowner: Data Platform\n---\n# Kubernetes Service Deployment Standard\n\nKubernetes is the preferred deployment platform for continuously running services that need controlled rollouts, autoscaling, and standardized health checks.\n\nHannah Brooks owns the production-readiness checklist. Project Atlas runs ranking services on Kubernetes. Project Phoenix also uses Kubernetes for recommendation serving. Bob Singh and Hannah Brooks both have hands-on Kubernetes experience and both worked on Project Phoenix."
+      },
+      {
+        "rank": 3,
+        "score": 0.8697900772094727,
+        "file_name": "recommendation_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/recommendation_architecture.md",
+        "text": "---\ndoc_id: doc_tech_recommendation_architecture\ndoc_type: technical_document\nowner: Recommendations\n---\n# Recommendation Architecture Overview\n\nProject Phoenix serves real-time personalized recommendations. Farah Khan leads the project.\n\nPhoenix uses Kafka for behavior events, Redis for online feature caching, Kubernetes for serving, and Python for model and service code. Bob Singh proposed Redis for the online feature cache. Carol Martinez proposed Kafka for the event bus. Farah Khan approved both decisions."
+      },
+      {
+        "rank": 4,
+        "score": 0.8675076365470886,
+        "file_name": "project_ownership_and_contacts.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/project_ownership_and_contacts.md",
+        "text": "---\ndoc_id: doc_tech_data_ownership\ndoc_type: technical_document\nowner: Architecture Council\n---\n# Project Ownership and Technical Contacts\n\nProject Atlas is owned by Search and led by Alice Chen. Project Phoenix is owned by Recommendations and led by Farah Khan. Project Nova is owned by Trust & Safety and led by David Kim. Project Mercury is owned by Payments and led by Elena Rossi.\n\nFor Kafka architecture, consult Carol Martinez. For Kubernetes production readiness, consult Hannah Brooks. For Elasticsearch relevance and mappings, consult George Liu or Alice Chen. For payment settlement workflows, consult Elena Rossi or Julia Patel."
+      },
+      {
+        "rank": 5,
+        "score": 0.863545298576355,
+        "file_name": "person_hannah.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/people/person_hannah.md",
+        "text": "---\ndoc_id: doc_people_hannah\ndoc_type: person_profile\nentity_id: person_hannah\nowner: People Operations\n---\n# Hannah Brooks\n\n**Title:** Platform SRE  \n**Team:** Data Platform  \n**Skills:** Kubernetes, Kafka  \n**Projects:** Project Atlas, Project Phoenix\n\n## Profile\nBuilds Kubernetes deployment standards and reliability controls.\n\n## Current responsibilities\nHannah Brooks contributes to Project Atlas, Project Phoenix. Their home team is Data Platform."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "relationship",
+    "question": "Which people worked on both Project Atlas and Project Phoenix?",
+    "expected_answer": [
+      "Alice Chen",
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8432698249816895,
+        "file_name": "project_ownership_and_contacts.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/project_ownership_and_contacts.md",
+        "text": "---\ndoc_id: doc_tech_data_ownership\ndoc_type: technical_document\nowner: Architecture Council\n---\n# Project Ownership and Technical Contacts\n\nProject Atlas is owned by Search and led by Alice Chen. Project Phoenix is owned by Recommendations and led by Farah Khan. Project Nova is owned by Trust & Safety and led by David Kim. Project Mercury is owned by Payments and led by Elena Rossi.\n\nFor Kafka architecture, consult Carol Martinez. For Kubernetes production readiness, consult Hannah Brooks. For Elasticsearch relevance and mappings, consult George Liu or Alice Chen. For payment settlement workflows, consult Elena Rossi or Julia Patel."
+      },
+      {
+        "rank": 2,
+        "score": 0.843198835849762,
+        "file_name": "project_phoenix.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_phoenix.md",
+        "text": "---\ndoc_id: doc_project_phoenix\ndoc_type: project_overview\nentity_id: project_phoenix\nowner: Recommendations\n---\n# Project Phoenix\n\n**Status:** Production  \n**Owning team:** Recommendations  \n**Project lead:** Farah Khan  \n**Core technologies:** Kafka, Kubernetes, Redis, Python\n\n## Purpose\nServe real-time personalized product recommendations using streaming behavior and low-latency feature access.\n\n## Contributors\nAlice Chen, Bob Singh, Carol Martinez, Farah Khan, Hannah Brooks, Julia Patel"
+      },
+      {
+        "rank": 3,
+        "score": 0.8359321355819702,
+        "file_name": "project_atlas.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_atlas.md",
+        "text": "---\ndoc_id: doc_project_atlas\ndoc_type: project_overview\nentity_id: project_atlas\nowner: Search\n---\n# Project Atlas\n\n**Status:** Production  \n**Owning team:** Search  \n**Project lead:** Alice Chen  \n**Core technologies:** Kafka, Elasticsearch, Python, Kubernetes\n\n## Purpose\nModernize product search ranking with fresh behavioral signals and a unified retrieval stack.\n\n## Contributors\nAlice Chen, Bob Singh, George Liu, Hannah Brooks"
+      },
+      {
+        "rank": 4,
+        "score": 0.8248288631439209,
+        "file_name": "streaming_platform_standard.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/streaming_platform_standard.md",
+        "text": "---\ndoc_id: doc_tech_streaming_standard\ndoc_type: technical_document\nowner: Data Platform\n---\n# Streaming Platform Standard\n\nAcme AI standardizes high-volume event streaming on Kafka when replay, ordered partitions, and multiple independent consumers are required.\n\nCarol Martinez is the primary technical contact for Kafka architecture. She proposed the Kafka decisions for both Project Atlas and Project Phoenix and maintains the organization-wide streaming guidance.\n\nProject Atlas uses Kafka for product and behavioral changes. Project Phoenix uses Kafka for near-real-time behavior events. Project Nova also consumes Kafka events for risk signals, while Project Mercury publishes settlement events."
+      },
+      {
+        "rank": 5,
+        "score": 0.8147199153900146,
+        "file_name": "search_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/search_architecture.md",
+        "text": "---\ndoc_id: doc_tech_search_architecture\ndoc_type: technical_document\nowner: Search\n---\n# Search Architecture Overview\n\nProject Atlas is the Search team's modernization program for product retrieval and ranking. Alice Chen leads the project.\n\nAtlas uses Elasticsearch as the retrieval engine, Python for ranking services, Kafka for change feeds, and Kubernetes for service deployment. George Liu owns index mapping and analyzer design. Alice Chen approved the Kafka, Elasticsearch, and Kubernetes architecture decisions for Atlas."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "multi_hop",
+    "question": "Who approved the architecture decisions for technologies used by Project Atlas?",
+    "expected_answer": [
+      "Alice Chen"
+    ],
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8816967010498047,
+        "file_name": "meeting_m001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m001.md",
+        "text": "---\ndoc_id: doc_meeting_m001\ndoc_type: meeting_notes\nentity_id: meeting_m001\ndate: 2026-02-12\n---\n# Atlas architecture review\n\n**Date:** 2026-02-12  \n**Projects:** Project Atlas  \n**Participants:** Alice Chen, Carol Martinez, George Liu, Hannah Brooks\n\n## Decisions discussed\n- Adopt Kafka for Atlas change feed (decision_d001)\n\n## Notes\n- Carol Martinez proposed **Adopt Kafka for Atlas change feed** and Alice Chen approved it."
+      },
+      {
+        "rank": 2,
+        "score": 0.8788067102432251,
+        "file_name": "decision_d002.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d002.md",
+        "text": "---\ndoc_id: doc_decision_d002\ndoc_type: architecture_decision\nentity_id: decision_d002\nproject_id: project_atlas\ndate: 2026-02-28\n---\n# Standardize Elasticsearch mappings for Atlas\n\n**Decision ID:** decision_d002  \n**Project:** Project Atlas  \n**Technology:** Elasticsearch  \n**Proposed by:** George Liu  \n**Approved by:** Alice Chen  \n**Date:** 2026-02-28\n\n## Decision\nStandardize Elasticsearch mappings for Atlas.\n\n## Rationale\nInconsistent field mappings caused relevance drift across indexes. A shared template made analyzers and ranking fields predictable.\n\n## Alternatives considered\nPer-index mappings, Schema-on-read"
+      },
+      {
+        "rank": 3,
+        "score": 0.8772780895233154,
+        "file_name": "decision_d001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d001.md",
+        "text": "---\ndoc_id: doc_decision_d001\ndoc_type: architecture_decision\nentity_id: decision_d001\nproject_id: project_atlas\ndate: 2026-02-12\n---\n# Adopt Kafka for Atlas change feed\n\n**Decision ID:** decision_d001  \n**Project:** Project Atlas  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Alice Chen  \n**Date:** 2026-02-12\n\n## Decision\nAdopt Kafka for Atlas change feed.\n\n## Rationale\nAtlas needed replayable, ordered product and behavior updates. Kafka provided durable event history and decoupled producers from ranking consumers.\n\n## Alternatives considered\nDirect database polling, Managed queue without replay"
+      },
+      {
+        "rank": 4,
+        "score": 0.8772366046905518,
+        "file_name": "search_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/search_architecture.md",
+        "text": "---\ndoc_id: doc_tech_search_architecture\ndoc_type: technical_document\nowner: Search\n---\n# Search Architecture Overview\n\nProject Atlas is the Search team's modernization program for product retrieval and ranking. Alice Chen leads the project.\n\nAtlas uses Elasticsearch as the retrieval engine, Python for ranking services, Kafka for change feeds, and Kubernetes for service deployment. George Liu owns index mapping and analyzer design. Alice Chen approved the Kafka, Elasticsearch, and Kubernetes architecture decisions for Atlas."
+      },
+      {
+        "rank": 5,
+        "score": 0.8704496622085571,
+        "file_name": "decision_d003.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d003.md",
+        "text": "---\ndoc_id: doc_decision_d003\ndoc_type: architecture_decision\nentity_id: decision_d003\nproject_id: project_atlas\ndate: 2026-03-15\n---\n# Deploy Atlas ranking services on Kubernetes\n\n**Decision ID:** decision_d003  \n**Project:** Project Atlas  \n**Technology:** Kubernetes  \n**Proposed by:** Hannah Brooks  \n**Approved by:** Alice Chen  \n**Date:** 2026-03-15\n\n## Decision\nDeploy Atlas ranking services on Kubernetes.\n\n## Rationale\nThe team needed controlled rollouts, autoscaling, and standard health checks for ranking services.\n\n## Alternatives considered\nLong-running VMs, Serverless functions"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "relationship",
+    "question": "Which projects were worked on by members of the Search team?",
+    "expected_answer": [
+      "Project Atlas",
+      "Project Phoenix"
+    ],
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8666645884513855,
+        "file_name": "project_atlas.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_atlas.md",
+        "text": "---\ndoc_id: doc_project_atlas\ndoc_type: project_overview\nentity_id: project_atlas\nowner: Search\n---\n# Project Atlas\n\n**Status:** Production  \n**Owning team:** Search  \n**Project lead:** Alice Chen  \n**Core technologies:** Kafka, Elasticsearch, Python, Kubernetes\n\n## Purpose\nModernize product search ranking with fresh behavioral signals and a unified retrieval stack.\n\n## Contributors\nAlice Chen, Bob Singh, George Liu, Hannah Brooks"
+      },
+      {
+        "rank": 2,
+        "score": 0.8576074242591858,
+        "file_name": "person_george.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/people/person_george.md",
+        "text": "---\ndoc_id: doc_people_george\ndoc_type: person_profile\nentity_id: person_george\nowner: People Operations\n---\n# George Liu\n\n**Title:** Search Engineer  \n**Team:** Search  \n**Skills:** Elasticsearch, Python  \n**Projects:** Project Atlas\n\n## Profile\nSpecializes in index design, query analysis, and ranking diagnostics.\n\n## Current responsibilities\nGeorge Liu contributes to Project Atlas. Their home team is Search."
+      },
+      {
+        "rank": 3,
+        "score": 0.856952965259552,
+        "file_name": "search_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/search_architecture.md",
+        "text": "---\ndoc_id: doc_tech_search_architecture\ndoc_type: technical_document\nowner: Search\n---\n# Search Architecture Overview\n\nProject Atlas is the Search team's modernization program for product retrieval and ranking. Alice Chen leads the project.\n\nAtlas uses Elasticsearch as the retrieval engine, Python for ranking services, Kafka for change feeds, and Kubernetes for service deployment. George Liu owns index mapping and analyzer design. Alice Chen approved the Kafka, Elasticsearch, and Kubernetes architecture decisions for Atlas."
+      },
+      {
+        "rank": 4,
+        "score": 0.8538061380386353,
+        "file_name": "person_alice.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/people/person_alice.md",
+        "text": "---\ndoc_id: doc_people_alice\ndoc_type: person_profile\nentity_id: person_alice\nowner: People Operations\n---\n# Alice Chen\n\n**Title:** Principal Search Engineer  \n**Team:** Search  \n**Skills:** Kafka, Elasticsearch, Python  \n**Projects:** Project Atlas, Project Phoenix\n\n## Profile\nLeads search ranking architecture and cross-team retrieval initiatives.\n\n## Current responsibilities\nAlice Chen contributes to Project Atlas, Project Phoenix. Their home team is Search."
+      },
+      {
+        "rank": 5,
+        "score": 0.8379285931587219,
+        "file_name": "project_ownership_and_contacts.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/project_ownership_and_contacts.md",
+        "text": "---\ndoc_id: doc_tech_data_ownership\ndoc_type: technical_document\nowner: Architecture Council\n---\n# Project Ownership and Technical Contacts\n\nProject Atlas is owned by Search and led by Alice Chen. Project Phoenix is owned by Recommendations and led by Farah Khan. Project Nova is owned by Trust & Safety and led by David Kim. Project Mercury is owned by Payments and led by Elena Rossi.\n\nFor Kafka architecture, consult Carol Martinez. For Kubernetes production readiness, consult Hannah Brooks. For Elasticsearch relevance and mappings, consult George Liu or Alice Chen. For payment settlement workflows, consult Elena Rossi or Julia Patel."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "multi_hop",
+    "question": "Which technologies are used by projects led by Alice Chen?",
+    "expected_answer": [
+      "Kafka",
+      "Elasticsearch",
+      "Python",
+      "Kubernetes"
+    ],
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8418522477149963,
+        "file_name": "person_alice.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/people/person_alice.md",
+        "text": "---\ndoc_id: doc_people_alice\ndoc_type: person_profile\nentity_id: person_alice\nowner: People Operations\n---\n# Alice Chen\n\n**Title:** Principal Search Engineer  \n**Team:** Search  \n**Skills:** Kafka, Elasticsearch, Python  \n**Projects:** Project Atlas, Project Phoenix\n\n## Profile\nLeads search ranking architecture and cross-team retrieval initiatives.\n\n## Current responsibilities\nAlice Chen contributes to Project Atlas, Project Phoenix. Their home team is Search."
+      },
+      {
+        "rank": 2,
+        "score": 0.8331612348556519,
+        "file_name": "project_phoenix.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_phoenix.md",
+        "text": "---\ndoc_id: doc_project_phoenix\ndoc_type: project_overview\nentity_id: project_phoenix\nowner: Recommendations\n---\n# Project Phoenix\n\n**Status:** Production  \n**Owning team:** Recommendations  \n**Project lead:** Farah Khan  \n**Core technologies:** Kafka, Kubernetes, Redis, Python\n\n## Purpose\nServe real-time personalized product recommendations using streaming behavior and low-latency feature access.\n\n## Contributors\nAlice Chen, Bob Singh, Carol Martinez, Farah Khan, Hannah Brooks, Julia Patel"
+      },
+      {
+        "rank": 3,
+        "score": 0.8249496817588806,
+        "file_name": "project_atlas.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_atlas.md",
+        "text": "---\ndoc_id: doc_project_atlas\ndoc_type: project_overview\nentity_id: project_atlas\nowner: Search\n---\n# Project Atlas\n\n**Status:** Production  \n**Owning team:** Search  \n**Project lead:** Alice Chen  \n**Core technologies:** Kafka, Elasticsearch, Python, Kubernetes\n\n## Purpose\nModernize product search ranking with fresh behavioral signals and a unified retrieval stack.\n\n## Contributors\nAlice Chen, Bob Singh, George Liu, Hannah Brooks"
+      },
+      {
+        "rank": 4,
+        "score": 0.8197571039199829,
+        "file_name": "search_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/search_architecture.md",
+        "text": "---\ndoc_id: doc_tech_search_architecture\ndoc_type: technical_document\nowner: Search\n---\n# Search Architecture Overview\n\nProject Atlas is the Search team's modernization program for product retrieval and ranking. Alice Chen leads the project.\n\nAtlas uses Elasticsearch as the retrieval engine, Python for ranking services, Kafka for change feeds, and Kubernetes for service deployment. George Liu owns index mapping and analyzer design. Alice Chen approved the Kafka, Elasticsearch, and Kubernetes architecture decisions for Atlas."
+      },
+      {
+        "rank": 5,
+        "score": 0.8178523778915405,
+        "file_name": "project_ownership_and_contacts.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/project_ownership_and_contacts.md",
+        "text": "---\ndoc_id: doc_tech_data_ownership\ndoc_type: technical_document\nowner: Architecture Council\n---\n# Project Ownership and Technical Contacts\n\nProject Atlas is owned by Search and led by Alice Chen. Project Phoenix is owned by Recommendations and led by Farah Khan. Project Nova is owned by Trust & Safety and led by David Kim. Project Mercury is owned by Payments and led by Elena Rossi.\n\nFor Kafka architecture, consult Carol Martinez. For Kubernetes production readiness, consult Hannah Brooks. For Elasticsearch relevance and mappings, consult George Liu or Alice Chen. For payment settlement workflows, consult Elena Rossi or Julia Patel."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "multi_hop",
+    "question": "Who is the best person to consult about Kafka based on both project experience and documented technical decisions?",
+    "expected_answer": "Carol Martinez",
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8511390686035156,
+        "file_name": "streaming_platform_standard.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/streaming_platform_standard.md",
+        "text": "---\ndoc_id: doc_tech_streaming_standard\ndoc_type: technical_document\nowner: Data Platform\n---\n# Streaming Platform Standard\n\nAcme AI standardizes high-volume event streaming on Kafka when replay, ordered partitions, and multiple independent consumers are required.\n\nCarol Martinez is the primary technical contact for Kafka architecture. She proposed the Kafka decisions for both Project Atlas and Project Phoenix and maintains the organization-wide streaming guidance.\n\nProject Atlas uses Kafka for product and behavioral changes. Project Phoenix uses Kafka for near-real-time behavior events. Project Nova also consumes Kafka events for risk signals, while Project Mercury publishes settlement events."
+      },
+      {
+        "rank": 2,
+        "score": 0.8510159254074097,
+        "file_name": "decision_d001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d001.md",
+        "text": "---\ndoc_id: doc_decision_d001\ndoc_type: architecture_decision\nentity_id: decision_d001\nproject_id: project_atlas\ndate: 2026-02-12\n---\n# Adopt Kafka for Atlas change feed\n\n**Decision ID:** decision_d001  \n**Project:** Project Atlas  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Alice Chen  \n**Date:** 2026-02-12\n\n## Decision\nAdopt Kafka for Atlas change feed.\n\n## Rationale\nAtlas needed replayable, ordered product and behavior updates. Kafka provided durable event history and decoupled producers from ranking consumers.\n\n## Alternatives considered\nDirect database polling, Managed queue without replay"
+      },
+      {
+        "rank": 3,
+        "score": 0.8487005233764648,
+        "file_name": "decision_d005.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d005.md",
+        "text": "---\ndoc_id: doc_decision_d005\ndoc_type: architecture_decision\nentity_id: decision_d005\nproject_id: project_phoenix\ndate: 2026-04-11\n---\n# Use Kafka as Phoenix behavior event bus\n\n**Decision ID:** decision_d005  \n**Project:** Project Phoenix  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Farah Khan  \n**Date:** 2026-04-11\n\n## Decision\nUse Kafka as Phoenix behavior event bus.\n\n## Rationale\nRecommendation features needed near-real-time user behavior with replay for backfills. Kafka aligned Phoenix with the company streaming standard.\n\n## Alternatives considered\nBatch files every hour, Point-to-point queues"
+      },
+      {
+        "rank": 4,
+        "score": 0.8437551259994507,
+        "file_name": "recommendation_architecture.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/recommendation_architecture.md",
+        "text": "---\ndoc_id: doc_tech_recommendation_architecture\ndoc_type: technical_document\nowner: Recommendations\n---\n# Recommendation Architecture Overview\n\nProject Phoenix serves real-time personalized recommendations. Farah Khan leads the project.\n\nPhoenix uses Kafka for behavior events, Redis for online feature caching, Kubernetes for serving, and Python for model and service code. Bob Singh proposed Redis for the online feature cache. Carol Martinez proposed Kafka for the event bus. Farah Khan approved both decisions."
+      },
+      {
+        "rank": 5,
+        "score": 0.8309791088104248,
+        "file_name": "meeting_m001.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m001.md",
+        "text": "---\ndoc_id: doc_meeting_m001\ndoc_type: meeting_notes\nentity_id: meeting_m001\ndate: 2026-02-12\n---\n# Atlas architecture review\n\n**Date:** 2026-02-12  \n**Projects:** Project Atlas  \n**Participants:** Alice Chen, Carol Martinez, George Liu, Hannah Brooks\n\n## Decisions discussed\n- Adopt Kafka for Atlas change feed (decision_d001)\n\n## Notes\n- Carol Martinez proposed **Adopt Kafka for Atlas change feed** and Alice Chen approved it."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "multi_hop",
+    "question": "Which architecture decisions affected projects owned by teams whose members also worked on Project Phoenix?",
+    "expected_answer": [
+      "Adopt Kafka for Atlas change feed",
+      "Standardize Elasticsearch mappings for Atlas",
+      "Deploy Atlas ranking services on Kubernetes",
+      "Use Redis for Phoenix online feature cache",
+      "Use Kafka as Phoenix behavior event bus"
+    ],
+    "retrieval": [
+      {
+        "rank": 1,
+        "score": 0.8737183809280396,
+        "file_name": "project_ownership_and_contacts.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/technical_docs/project_ownership_and_contacts.md",
+        "text": "---\ndoc_id: doc_tech_data_ownership\ndoc_type: technical_document\nowner: Architecture Council\n---\n# Project Ownership and Technical Contacts\n\nProject Atlas is owned by Search and led by Alice Chen. Project Phoenix is owned by Recommendations and led by Farah Khan. Project Nova is owned by Trust & Safety and led by David Kim. Project Mercury is owned by Payments and led by Elena Rossi.\n\nFor Kafka architecture, consult Carol Martinez. For Kubernetes production readiness, consult Hannah Brooks. For Elasticsearch relevance and mappings, consult George Liu or Alice Chen. For payment settlement workflows, consult Elena Rossi or Julia Patel."
+      },
+      {
+        "rank": 2,
+        "score": 0.8620762825012207,
+        "file_name": "project_phoenix.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/projects/project_phoenix.md",
+        "text": "---\ndoc_id: doc_project_phoenix\ndoc_type: project_overview\nentity_id: project_phoenix\nowner: Recommendations\n---\n# Project Phoenix\n\n**Status:** Production  \n**Owning team:** Recommendations  \n**Project lead:** Farah Khan  \n**Core technologies:** Kafka, Kubernetes, Redis, Python\n\n## Purpose\nServe real-time personalized product recommendations using streaming behavior and low-latency feature access.\n\n## Contributors\nAlice Chen, Bob Singh, Carol Martinez, Farah Khan, Hannah Brooks, Julia Patel"
+      },
+      {
+        "rank": 3,
+        "score": 0.8444288969039917,
+        "file_name": "meeting_m004.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/meetings/meeting_m004.md",
+        "text": "---\ndoc_id: doc_meeting_m004\ndoc_type: meeting_notes\nentity_id: meeting_m004\ndate: 2026-04-11\n---\n# Phoenix serving architecture review\n\n**Date:** 2026-04-11  \n**Projects:** Project Phoenix  \n**Participants:** Farah Khan, Bob Singh, Carol Martinez, Hannah Brooks, Julia Patel\n\n## Decisions discussed\n- Use Redis for Phoenix online feature cache (decision_d004)\n- Use Kafka as Phoenix behavior event bus (decision_d005)\n\n## Notes\n- Bob Singh proposed **Use Redis for Phoenix online feature cache** and Farah Khan approved it.\n- Carol Martinez proposed **Use Kafka as Phoenix behavior event bus** and Farah Khan approved it."
+      },
+      {
+        "rank": 4,
+        "score": 0.8421381711959839,
+        "file_name": "decision_d005.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/decisions/decision_d005.md",
+        "text": "---\ndoc_id: doc_decision_d005\ndoc_type: architecture_decision\nentity_id: decision_d005\nproject_id: project_phoenix\ndate: 2026-04-11\n---\n# Use Kafka as Phoenix behavior event bus\n\n**Decision ID:** decision_d005  \n**Project:** Project Phoenix  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Farah Khan  \n**Date:** 2026-04-11\n\n## Decision\nUse Kafka as Phoenix behavior event bus.\n\n## Rationale\nRecommendation features needed near-real-time user behavior with replay for backfills. Kafka aligned Phoenix with the company streaming standard.\n\n## Alternatives considered\nBatch files every hour, Point-to-point queues"
+      },
+      {
+        "rank": 5,
+        "score": 0.8369107842445374,
+        "file_name": "person_farah.md",
+        "file_path": "/Users/rohitk/mastering_agentic_ai/mastering_agentic_ai_projects/Week_2/orgmind-graphrag/data/people/person_farah.md",
+        "text": "---\ndoc_id: doc_people_farah\ndoc_type: person_profile\nentity_id: person_farah\nowner: People Operations\n---\n# Farah Khan\n\n**Title:** Product Manager  \n**Team:** Recommendations  \n**Skills:** Experimentation  \n**Projects:** Project Phoenix\n\n## Profile\nOwns Project Phoenix roadmap, experimentation, and launch decisions.\n\n## Current responsibilities\nFarah Khan contributes to Project Phoenix. Their home team is Recommendations."
+      }
+    ]
+  }
+]

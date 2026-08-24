@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "category": "single_fact",
+    "question": "What database does Project Phoenix use for its online feature cache?",
+    "expected_answer": "Redis",
+    "route": "project_feature_technology",
+    "answer": "Project Phoenix uses Redis for its online feature cache.",
+    "latency_seconds": 3.4876870419830084,
+    "input_tokens": 156,
+    "output_tokens": 11
+  },
+  {
+    "id": 2,
+    "category": "single_fact",
+    "question": "What is the purpose of Project Atlas?",
+    "expected_answer": "Modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+    "route": "project_purpose",
+    "answer": "The purpose of Project Atlas is to modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+    "latency_seconds": 0.6970403749728575,
+    "input_tokens": 252,
+    "output_tokens": 23
+  },
+  {
+    "id": 3,
+    "category": "semantic",
+    "question": "Why did Project Atlas adopt Kafka?",
+    "expected_answer": "Atlas needed replayable, ordered product and behavior updates and wanted to decouple producers from ranking consumers.",
+    "route": "decision_rationale",
+    "answer": "Project Atlas adopted Kafka to enable replayable, ordered product and behavior updates, leveraging Kafka's durable event history and ability to decouple producers from ranking consumers.",
+    "latency_seconds": 0.9521521670394577,
+    "input_tokens": 332,
+    "output_tokens": 32
+  },
+  {
+    "id": 4,
+    "category": "relationship",
+    "question": "Who worked on Project Phoenix and also has Kubernetes experience?",
+    "expected_answer": [
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "route": "person_project_skill",
+    "answer": "Bob Singh and Hannah Brooks worked on Project Phoenix and have Kubernetes experience.",
+    "latency_seconds": 1.4562187080155127,
+    "input_tokens": 169,
+    "output_tokens": 15
+  },
+  {
+    "id": 5,
+    "category": "relationship",
+    "question": "Which people worked on both Project Atlas and Project Phoenix?",
+    "expected_answer": [
+      "Alice Chen",
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "route": "shared_projects",
+    "answer": "Alice Chen, Bob Singh, Carol Martinez, and Hannah Brooks worked on both Project Atlas and Project Phoenix.",
+    "latency_seconds": 0.7939026250387542,
+    "input_tokens": 219,
+    "output_tokens": 22
+  },
+  {
+    "id": 6,
+    "category": "multi_hop",
+    "question": "Who approved the architecture decisions for technologies used by Project Atlas?",
+    "expected_answer": [
+      "Alice Chen"
+    ],
+    "route": "decision_approvers",
+    "answer": "Alice Chen approved the architecture decisions for the technologies used by Project Atlas.",
+    "latency_seconds": 0.7902883340138942,
+    "input_tokens": 219,
+    "output_tokens": 15
+  },
+  {
+    "id": 7,
+    "category": "relationship",
+    "question": "Which projects were worked on by members of the Search team?",
+    "expected_answer": [
+      "Project Atlas",
+      "Project Phoenix"
+    ],
+    "route": "team_projects",
+    "answer": "The projects worked on by members of the Search team are Project Atlas and Project Phoenix.",
+    "latency_seconds": 2.2145993749727495,
+    "input_tokens": 189,
+    "output_tokens": 18
+  },
+  {
+    "id": 8,
+    "category": "multi_hop",
+    "question": "Which technologies are used by projects led by Alice Chen?",
+    "expected_answer": [
+      "Kafka",
+      "Elasticsearch",
+      "Python",
+      "Kubernetes"
+    ],
+    "route": "leader_technologies",
+    "answer": "I could not determine this from the retrieved evidence.",
+    "latency_seconds": 0.44228699995437637,
+    "input_tokens": 137,
+    "output_tokens": 11
+  },
+  {
+    "id": 9,
+    "category": "multi_hop",
+    "question": "Who is the best person to consult about Kafka based on both project experience and documented technical decisions?",
+    "expected_answer": "Carol Martinez",
+    "route": "expert_lookup",
+    "answer": "The best person to consult about Kafka based on both project experience and documented technical decisions is Carol Martinez. She has experience with three projects\u2014Project Atlas, Project Phoenix, and Project Mercury\u2014and has made two documented technical decisions involving Kafka: adopting Kafka for the Atlas change feed and using Kafka as the Phoenix behavior event bus. Her expertise score of 7 is the highest among all individuals listed.",
+    "latency_seconds": 1.6514183330000378,
+    "input_tokens": 379,
+    "output_tokens": 78
+  },
+  {
+    "id": 10,
+    "category": "multi_hop",
+    "question": "Which architecture decisions affected projects owned by teams whose members also worked on Project Phoenix?",
+    "expected_answer": [
+      "Adopt Kafka for Atlas change feed",
+      "Standardize Elasticsearch mappings for Atlas",
+      "Deploy Atlas ranking services on Kubernetes",
+      "Use Redis for Phoenix online feature cache",
+      "Use Kafka as Phoenix behavior event bus"
+    ],
+    "route": "multi_hop_decisions",
+    "answer": "The architecture decisions that affected projects owned by teams whose members also worked on Project Phoenix are:\n\n- Use Kafka as Phoenix behavior event bus (Project Phoenix, Recommendations team, with Farah Khan and Bob Singh)\n- Use Redis for Phoenix online feature cache (Project Phoenix, Recommendations team, with Farah Khan and Bob Singh)\n\nThese decisions were made by the Recommendations team, which includes members (Farah Khan and Bob Singh) who also worked on Project Phoenix. No other projects owned by teams with overlapping members are mentioned in the evidence.",
+    "latency_seconds": 2.243200375000015,
+    "input_tokens": 361,
+    "output_tokens": 107
+  }
+]

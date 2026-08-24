@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "category": "single_fact",
+    "question": "What database does Project Phoenix use for its online feature cache?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly states that Project Phoenix uses Redis, fully addresses the question, and is directly supported by the retrieved evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly states Redis, which fully answers the question, includes all required information, and is directly supported by multiple retrieved documents."
+    },
+    "graph_latency": 3.4876870419830084,
+    "vector_latency": 3.7726002919953316,
+    "graph_score": 1.0,
+    "vector_score": 1.0,
+    "winner": "Tie"
+  },
+  {
+    "id": 2,
+    "category": "single_fact",
+    "question": "What is the purpose of Project Atlas?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer exactly matches the ground truth purpose and is directly supported by the retrieved evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer exactly matches the ground truth purpose statement and is directly supported by the retrieved project overview and technical documents."
+    },
+    "graph_latency": 0.6970403749728575,
+    "vector_latency": 1.3463017079629935,
+    "graph_score": 1.0,
+    "vector_score": 1.0,
+    "winner": "Tie"
+  },
+  {
+    "id": 3,
+    "category": "semantic",
+    "question": "Why did Project Atlas adopt Kafka?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer accurately restates both reasons from the ground truth and evidence, covering all key points and is fully supported by the retrieved document."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer accurately states the reasons (replayable, ordered updates and decoupling producers from consumers) and adds durable event history, which is supported by the cited decision document. All key points are included and backed by evidence."
+    },
+    "graph_latency": 0.9521521670394577,
+    "vector_latency": 0.9716108340071514,
+    "graph_score": 1.0,
+    "vector_score": 1.0,
+    "winner": "Tie"
+  },
+  {
+    "id": 4,
+    "category": "relationship",
+    "question": "Who worked on Project Phoenix and also has Kubernetes experience?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer lists both Bob Singh and Hannah Brooks, matching the ground truth, includes all required individuals, and each claim is directly supported by the retrieved evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly lists both Bob Singh and Hannah Brooks, matching the ground truth, includes all required individuals, and each claim is directly supported by the retrieved evidence."
+    },
+    "graph_latency": 1.4562187080155127,
+    "vector_latency": 0.6296906669740565,
+    "graph_score": 1.0,
+    "vector_score": 1.0,
+    "winner": "Tie"
+  },
+  {
+    "id": 5,
+    "category": "relationship",
+    "question": "Which people worked on both Project Atlas and Project Phoenix?",
+    "graph": {
+      "correctness": 1,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer includes all three correct people (Alice Chen, Bob Singh, Hannah Brooks) but also adds Carol Martinez, which is not in the ground truth, making it only partially correct. It is complete because it covers all required names, and all listed names are supported by the retrieved evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer lists Alice Chen, Bob Singh, and Hannah Brooks, which matches the ground truth and is directly supported by the contributor lists in both project_overview documents."
+    },
+    "graph_latency": 0.7939026250387542,
+    "vector_latency": 1.2999675000319257,
+    "graph_score": 0.8333333333333334,
+    "vector_score": 1.0,
+    "winner": "VectorRAG"
+  },
+  {
+    "id": 6,
+    "category": "multi_hop",
+    "question": "Who approved the architecture decisions for technologies used by Project Atlas?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly names Alice Chen as the approver, fully addresses the question, and is directly supported by the retrieved evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly identifies Alice Chen as the approver, includes all required information, and all claims are directly supported by the retrieved evidence."
+    },
+    "graph_latency": 0.7902883340138942,
+    "vector_latency": 0.7439255000208504,
+    "graph_score": 1.0,
+    "vector_score": 1.0,
+    "winner": "Tie"
+  },
+  {
+    "id": 7,
+    "category": "relationship",
+    "question": "Which projects were worked on by members of the Search team?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer lists exactly the two projects (Atlas and Phoenix) that appear in the retrieved evidence, matching the ground truth and fully supported by the evidence."
+    },
+    "vector": {
+      "correctness": 1,
+      "completeness": 1,
+      "faithfulness": 0,
+      "reason": "The answer includes Project Atlas but omits Project Phoenix, so it is only partially correct and incomplete. It also incorrectly claims no other projects are worked on by Search team members, despite evidence that Alice Chen (Search) works on Project Phoenix, making the claim unsupported."
+    },
+    "graph_latency": 2.2145993749727495,
+    "vector_latency": 5.773257250024471,
+    "graph_score": 1.0,
+    "vector_score": 0.3333333333333333,
+    "winner": "GraphRAG"
+  },
+  {
+    "id": 8,
+    "category": "multi_hop",
+    "question": "Which technologies are used by projects led by Alice Chen?",
+    "graph": {
+      "correctness": 0,
+      "completeness": 0,
+      "faithfulness": 2,
+      "reason": "The answer provides no technologies, contradicting the ground truth, so it is incorrect and incomplete. However, the claim that it cannot determine the answer is fully supported by the lack of retrieved evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer lists exactly the four technologies (Kafka, Elasticsearch, Python, Kubernetes) used in Project Atlas, which is led by Alice Chen, matching the ground truth and all supporting documents."
+    },
+    "graph_latency": 0.44228699995437637,
+    "vector_latency": 2.2196862080018036,
+    "graph_score": 0.3333333333333333,
+    "vector_score": 1.0,
+    "winner": "VectorRAG"
+  },
+  {
+    "id": 9,
+    "category": "multi_hop",
+    "question": "Who is the best person to consult about Kafka based on both project experience and documented technical decisions?",
+    "graph": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly identifies Carol Martinez, matching the ground truth, provides full justification based on the provided evidence, and all claims are directly supported by the evidence."
+    },
+    "vector": {
+      "correctness": 2,
+      "completeness": 2,
+      "faithfulness": 2,
+      "reason": "The answer correctly names Carol Martinez, provides relevant supporting details, and all claims are directly backed by the retrieved evidence."
+    },
+    "graph_latency": 1.6514183330000378,
+    "vector_latency": 1.9275964999687858,
+    "graph_score": 1.0,
+    "vector_score": 1.0,
+    "winner": "Tie"
+  },
+  {
+    "id": 10,
+    "category": "multi_hop",
+    "question": "Which architecture decisions affected projects owned by teams whose members also worked on Project Phoenix?",
+    "graph": {
+      "correctness": 1,
+      "completeness": 1,
+      "faithfulness": 2,
+      "reason": "The answer lists two of the five expected decisions, missing the three Atlas decisions, so it is only partially correct and incomplete. However, the statements it makes are fully supported by the provided evidence."
+    },
+    "vector": {
+      "correctness": 1,
+      "completeness": 0,
+      "faithfulness": 0,
+      "reason": "The answer includes two correct decisions but omits the three Atlas-related decisions, making it incomplete. It also adds speculative statements about team impacts that are not supported by the provided evidence."
+    },
+    "graph_latency": 2.243200375000015,
+    "vector_latency": 4.170892791997176,
+    "graph_score": 0.6666666666666666,
+    "vector_score": 0.16666666666666666,
+    "winner": "GraphRAG"
+  }
+]

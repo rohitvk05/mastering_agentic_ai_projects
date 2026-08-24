@@ -1,0 +1,1392 @@
+{
+  "nodes": [
+    {
+      "id": "team_search",
+      "label": "Team",
+      "name": "Search",
+      "mission": "Build retrieval, ranking, and query understanding systems."
+    },
+    {
+      "id": "team_recommendations",
+      "label": "Team",
+      "name": "Recommendations",
+      "mission": "Build real-time personalized ranking and recommendation experiences."
+    },
+    {
+      "id": "team_trust",
+      "label": "Team",
+      "name": "Trust & Safety",
+      "mission": "Detect abuse, fraud, and risky account behavior."
+    },
+    {
+      "id": "team_data_platform",
+      "label": "Team",
+      "name": "Data Platform",
+      "mission": "Provide reliable event, orchestration, and analytics infrastructure."
+    },
+    {
+      "id": "team_payments",
+      "label": "Team",
+      "name": "Payments",
+      "mission": "Build payment processing and financial reconciliation systems."
+    },
+    {
+      "id": "skill_kafka",
+      "label": "Skill",
+      "name": "Kafka"
+    },
+    {
+      "id": "skill_kubernetes",
+      "label": "Skill",
+      "name": "Kubernetes"
+    },
+    {
+      "id": "skill_elasticsearch",
+      "label": "Skill",
+      "name": "Elasticsearch"
+    },
+    {
+      "id": "skill_python",
+      "label": "Skill",
+      "name": "Python"
+    },
+    {
+      "id": "skill_redis",
+      "label": "Skill",
+      "name": "Redis"
+    },
+    {
+      "id": "skill_postgresql",
+      "label": "Skill",
+      "name": "PostgreSQL"
+    },
+    {
+      "id": "skill_airflow",
+      "label": "Skill",
+      "name": "Airflow"
+    },
+    {
+      "id": "skill_experimentation",
+      "label": "Skill",
+      "name": "Experimentation"
+    },
+    {
+      "id": "tech_kafka",
+      "label": "Technology",
+      "name": "Kafka"
+    },
+    {
+      "id": "tech_kubernetes",
+      "label": "Technology",
+      "name": "Kubernetes"
+    },
+    {
+      "id": "tech_elasticsearch",
+      "label": "Technology",
+      "name": "Elasticsearch"
+    },
+    {
+      "id": "tech_python",
+      "label": "Technology",
+      "name": "Python"
+    },
+    {
+      "id": "tech_redis",
+      "label": "Technology",
+      "name": "Redis"
+    },
+    {
+      "id": "tech_postgresql",
+      "label": "Technology",
+      "name": "PostgreSQL"
+    },
+    {
+      "id": "tech_airflow",
+      "label": "Technology",
+      "name": "Airflow"
+    },
+    {
+      "id": "person_alice",
+      "label": "Person",
+      "name": "Alice Chen",
+      "title": "Principal Search Engineer"
+    },
+    {
+      "id": "person_bob",
+      "label": "Person",
+      "name": "Bob Singh",
+      "title": "Senior ML Engineer"
+    },
+    {
+      "id": "person_carol",
+      "label": "Person",
+      "name": "Carol Martinez",
+      "title": "Staff Data Platform Engineer"
+    },
+    {
+      "id": "person_david",
+      "label": "Person",
+      "name": "David Kim",
+      "title": "Engineering Manager"
+    },
+    {
+      "id": "person_elena",
+      "label": "Person",
+      "name": "Elena Rossi",
+      "title": "Senior Payments Engineer"
+    },
+    {
+      "id": "person_farah",
+      "label": "Person",
+      "name": "Farah Khan",
+      "title": "Product Manager"
+    },
+    {
+      "id": "person_george",
+      "label": "Person",
+      "name": "George Liu",
+      "title": "Search Engineer"
+    },
+    {
+      "id": "person_hannah",
+      "label": "Person",
+      "name": "Hannah Brooks",
+      "title": "Platform SRE"
+    },
+    {
+      "id": "person_isaac",
+      "label": "Person",
+      "name": "Isaac Brown",
+      "title": "Trust & Safety Engineer"
+    },
+    {
+      "id": "person_julia",
+      "label": "Person",
+      "name": "Julia Patel",
+      "title": "Payments Tech Lead"
+    },
+    {
+      "id": "project_atlas",
+      "label": "Project",
+      "name": "Project Atlas",
+      "purpose": "Modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+      "status": "Production"
+    },
+    {
+      "id": "project_phoenix",
+      "label": "Project",
+      "name": "Project Phoenix",
+      "purpose": "Serve real-time personalized product recommendations using streaming behavior and low-latency feature access.",
+      "status": "Production"
+    },
+    {
+      "id": "project_nova",
+      "label": "Project",
+      "name": "Project Nova",
+      "purpose": "Detect suspicious account behavior and route high-risk cases for investigation.",
+      "status": "Pilot"
+    },
+    {
+      "id": "project_mercury",
+      "label": "Project",
+      "name": "Project Mercury",
+      "purpose": "Automate payment settlement reconciliation and exception handling.",
+      "status": "Production"
+    },
+    {
+      "id": "decision_d001",
+      "label": "Decision",
+      "title": "Adopt Kafka for Atlas change feed",
+      "date": "2026-02-12",
+      "rationale": "Atlas needed replayable, ordered product and behavior updates. Kafka provided durable event history and decoupled producers from ranking consumers."
+    },
+    {
+      "id": "decision_d002",
+      "label": "Decision",
+      "title": "Standardize Elasticsearch mappings for Atlas",
+      "date": "2026-02-28",
+      "rationale": "Inconsistent field mappings caused relevance drift across indexes. A shared template made analyzers and ranking fields predictable."
+    },
+    {
+      "id": "decision_d003",
+      "label": "Decision",
+      "title": "Deploy Atlas ranking services on Kubernetes",
+      "date": "2026-03-15",
+      "rationale": "The team needed controlled rollouts, autoscaling, and standard health checks for ranking services."
+    },
+    {
+      "id": "decision_d004",
+      "label": "Decision",
+      "title": "Use Redis for Phoenix online feature cache",
+      "date": "2026-04-03",
+      "rationale": "Phoenix required predictable sub-20ms feature lookups during recommendation ranking. Redis met latency and operational requirements."
+    },
+    {
+      "id": "decision_d005",
+      "label": "Decision",
+      "title": "Use Kafka as Phoenix behavior event bus",
+      "date": "2026-04-11",
+      "rationale": "Recommendation features needed near-real-time user behavior with replay for backfills. Kafka aligned Phoenix with the company streaming standard."
+    },
+    {
+      "id": "decision_d006",
+      "label": "Decision",
+      "title": "Use PostgreSQL for Nova investigation cases",
+      "date": "2026-05-07",
+      "rationale": "Investigation cases required transactional updates, auditability, and flexible analyst queries."
+    },
+    {
+      "id": "decision_d007",
+      "label": "Decision",
+      "title": "Use Airflow for Mercury settlement workflows",
+      "date": "2026-05-22",
+      "rationale": "Settlement jobs have dependencies, retries, and cutoff windows. Airflow made orchestration and operational visibility explicit."
+    },
+    {
+      "id": "decision_d008",
+      "label": "Decision",
+      "title": "Use PostgreSQL as Mercury reconciliation ledger",
+      "date": "2026-05-29",
+      "rationale": "Mercury needed a transactional source of truth for settlement status, discrepancies, and audit trails."
+    },
+    {
+      "id": "meeting_m001",
+      "label": "Meeting",
+      "title": "Atlas architecture review",
+      "date": "2026-02-12"
+    },
+    {
+      "id": "meeting_m002",
+      "label": "Meeting",
+      "title": "Atlas relevance schema review",
+      "date": "2026-02-28"
+    },
+    {
+      "id": "meeting_m003",
+      "label": "Meeting",
+      "title": "Atlas production readiness review",
+      "date": "2026-03-15"
+    },
+    {
+      "id": "meeting_m004",
+      "label": "Meeting",
+      "title": "Phoenix serving architecture review",
+      "date": "2026-04-11"
+    },
+    {
+      "id": "meeting_m005",
+      "label": "Meeting",
+      "title": "Nova case platform review",
+      "date": "2026-05-07"
+    },
+    {
+      "id": "meeting_m006",
+      "label": "Meeting",
+      "title": "Mercury settlement design review",
+      "date": "2026-05-29"
+    },
+    {
+      "id": "doc_people_alice",
+      "label": "Document",
+      "title": "Person Alice",
+      "path": "data/people/person_alice.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_bob",
+      "label": "Document",
+      "title": "Person Bob",
+      "path": "data/people/person_bob.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_carol",
+      "label": "Document",
+      "title": "Person Carol",
+      "path": "data/people/person_carol.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_david",
+      "label": "Document",
+      "title": "Person David",
+      "path": "data/people/person_david.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_elena",
+      "label": "Document",
+      "title": "Person Elena",
+      "path": "data/people/person_elena.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_farah",
+      "label": "Document",
+      "title": "Person Farah",
+      "path": "data/people/person_farah.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_george",
+      "label": "Document",
+      "title": "Person George",
+      "path": "data/people/person_george.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_hannah",
+      "label": "Document",
+      "title": "Person Hannah",
+      "path": "data/people/person_hannah.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_isaac",
+      "label": "Document",
+      "title": "Person Isaac",
+      "path": "data/people/person_isaac.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_people_julia",
+      "label": "Document",
+      "title": "Person Julia",
+      "path": "data/people/person_julia.md",
+      "doc_type": "person_profile"
+    },
+    {
+      "id": "doc_project_atlas",
+      "label": "Document",
+      "title": "Project Atlas",
+      "path": "data/projects/project_atlas.md",
+      "doc_type": "project_overview"
+    },
+    {
+      "id": "doc_project_phoenix",
+      "label": "Document",
+      "title": "Project Phoenix",
+      "path": "data/projects/project_phoenix.md",
+      "doc_type": "project_overview"
+    },
+    {
+      "id": "doc_project_nova",
+      "label": "Document",
+      "title": "Project Nova",
+      "path": "data/projects/project_nova.md",
+      "doc_type": "project_overview"
+    },
+    {
+      "id": "doc_project_mercury",
+      "label": "Document",
+      "title": "Project Mercury",
+      "path": "data/projects/project_mercury.md",
+      "doc_type": "project_overview"
+    },
+    {
+      "id": "doc_decision_d001",
+      "label": "Document",
+      "title": "Decision D001",
+      "path": "data/decisions/decision_d001.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d002",
+      "label": "Document",
+      "title": "Decision D002",
+      "path": "data/decisions/decision_d002.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d003",
+      "label": "Document",
+      "title": "Decision D003",
+      "path": "data/decisions/decision_d003.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d004",
+      "label": "Document",
+      "title": "Decision D004",
+      "path": "data/decisions/decision_d004.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d005",
+      "label": "Document",
+      "title": "Decision D005",
+      "path": "data/decisions/decision_d005.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d006",
+      "label": "Document",
+      "title": "Decision D006",
+      "path": "data/decisions/decision_d006.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d007",
+      "label": "Document",
+      "title": "Decision D007",
+      "path": "data/decisions/decision_d007.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_decision_d008",
+      "label": "Document",
+      "title": "Decision D008",
+      "path": "data/decisions/decision_d008.md",
+      "doc_type": "architecture_decision"
+    },
+    {
+      "id": "doc_meeting_m001",
+      "label": "Document",
+      "title": "Meeting M001",
+      "path": "data/meetings/meeting_m001.md",
+      "doc_type": "meeting_notes"
+    },
+    {
+      "id": "doc_meeting_m002",
+      "label": "Document",
+      "title": "Meeting M002",
+      "path": "data/meetings/meeting_m002.md",
+      "doc_type": "meeting_notes"
+    },
+    {
+      "id": "doc_meeting_m003",
+      "label": "Document",
+      "title": "Meeting M003",
+      "path": "data/meetings/meeting_m003.md",
+      "doc_type": "meeting_notes"
+    },
+    {
+      "id": "doc_meeting_m004",
+      "label": "Document",
+      "title": "Meeting M004",
+      "path": "data/meetings/meeting_m004.md",
+      "doc_type": "meeting_notes"
+    },
+    {
+      "id": "doc_meeting_m005",
+      "label": "Document",
+      "title": "Meeting M005",
+      "path": "data/meetings/meeting_m005.md",
+      "doc_type": "meeting_notes"
+    },
+    {
+      "id": "doc_meeting_m006",
+      "label": "Document",
+      "title": "Meeting M006",
+      "path": "data/meetings/meeting_m006.md",
+      "doc_type": "meeting_notes"
+    },
+    {
+      "id": "doc_tech_streaming_standard",
+      "label": "Document",
+      "title": "Streaming Platform Standard",
+      "path": "data/technical_docs/streaming_platform_standard.md",
+      "doc_type": "technical_document"
+    },
+    {
+      "id": "doc_tech_kubernetes_standard",
+      "label": "Document",
+      "title": "Kubernetes Service Standard",
+      "path": "data/technical_docs/kubernetes_service_standard.md",
+      "doc_type": "technical_document"
+    },
+    {
+      "id": "doc_tech_search_architecture",
+      "label": "Document",
+      "title": "Search Architecture",
+      "path": "data/technical_docs/search_architecture.md",
+      "doc_type": "technical_document"
+    },
+    {
+      "id": "doc_tech_recommendation_architecture",
+      "label": "Document",
+      "title": "Recommendation Architecture",
+      "path": "data/technical_docs/recommendation_architecture.md",
+      "doc_type": "technical_document"
+    },
+    {
+      "id": "doc_tech_data_ownership",
+      "label": "Document",
+      "title": "Project Ownership And Contacts",
+      "path": "data/technical_docs/project_ownership_and_contacts.md",
+      "doc_type": "technical_document"
+    }
+  ],
+  "edges": [
+    {
+      "source": "person_alice",
+      "type": "MEMBER_OF",
+      "target": "team_search"
+    },
+    {
+      "source": "person_alice",
+      "type": "HAS_SKILL",
+      "target": "skill_kafka"
+    },
+    {
+      "source": "person_alice",
+      "type": "HAS_SKILL",
+      "target": "skill_elasticsearch"
+    },
+    {
+      "source": "person_alice",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_alice",
+      "type": "WORKED_ON",
+      "target": "project_atlas"
+    },
+    {
+      "source": "person_alice",
+      "type": "WORKED_ON",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "person_bob",
+      "type": "MEMBER_OF",
+      "target": "team_recommendations"
+    },
+    {
+      "source": "person_bob",
+      "type": "HAS_SKILL",
+      "target": "skill_kubernetes"
+    },
+    {
+      "source": "person_bob",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_bob",
+      "type": "HAS_SKILL",
+      "target": "skill_redis"
+    },
+    {
+      "source": "person_bob",
+      "type": "WORKED_ON",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "person_bob",
+      "type": "WORKED_ON",
+      "target": "project_atlas"
+    },
+    {
+      "source": "person_carol",
+      "type": "MEMBER_OF",
+      "target": "team_data_platform"
+    },
+    {
+      "source": "person_carol",
+      "type": "HAS_SKILL",
+      "target": "skill_kafka"
+    },
+    {
+      "source": "person_carol",
+      "type": "HAS_SKILL",
+      "target": "skill_airflow"
+    },
+    {
+      "source": "person_carol",
+      "type": "HAS_SKILL",
+      "target": "skill_postgresql"
+    },
+    {
+      "source": "person_carol",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_carol",
+      "type": "WORKED_ON",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "person_carol",
+      "type": "WORKED_ON",
+      "target": "project_mercury"
+    },
+    {
+      "source": "person_david",
+      "type": "MEMBER_OF",
+      "target": "team_trust"
+    },
+    {
+      "source": "person_david",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_david",
+      "type": "HAS_SKILL",
+      "target": "skill_kafka"
+    },
+    {
+      "source": "person_david",
+      "type": "WORKED_ON",
+      "target": "project_nova"
+    },
+    {
+      "source": "person_elena",
+      "type": "MEMBER_OF",
+      "target": "team_payments"
+    },
+    {
+      "source": "person_elena",
+      "type": "HAS_SKILL",
+      "target": "skill_postgresql"
+    },
+    {
+      "source": "person_elena",
+      "type": "HAS_SKILL",
+      "target": "skill_airflow"
+    },
+    {
+      "source": "person_elena",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_elena",
+      "type": "WORKED_ON",
+      "target": "project_mercury"
+    },
+    {
+      "source": "person_farah",
+      "type": "MEMBER_OF",
+      "target": "team_recommendations"
+    },
+    {
+      "source": "person_farah",
+      "type": "HAS_SKILL",
+      "target": "skill_experimentation"
+    },
+    {
+      "source": "person_farah",
+      "type": "WORKED_ON",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "person_george",
+      "type": "MEMBER_OF",
+      "target": "team_search"
+    },
+    {
+      "source": "person_george",
+      "type": "HAS_SKILL",
+      "target": "skill_elasticsearch"
+    },
+    {
+      "source": "person_george",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_george",
+      "type": "WORKED_ON",
+      "target": "project_atlas"
+    },
+    {
+      "source": "person_hannah",
+      "type": "MEMBER_OF",
+      "target": "team_data_platform"
+    },
+    {
+      "source": "person_hannah",
+      "type": "HAS_SKILL",
+      "target": "skill_kubernetes"
+    },
+    {
+      "source": "person_hannah",
+      "type": "HAS_SKILL",
+      "target": "skill_kafka"
+    },
+    {
+      "source": "person_hannah",
+      "type": "WORKED_ON",
+      "target": "project_atlas"
+    },
+    {
+      "source": "person_hannah",
+      "type": "WORKED_ON",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "person_isaac",
+      "type": "MEMBER_OF",
+      "target": "team_trust"
+    },
+    {
+      "source": "person_isaac",
+      "type": "HAS_SKILL",
+      "target": "skill_postgresql"
+    },
+    {
+      "source": "person_isaac",
+      "type": "HAS_SKILL",
+      "target": "skill_python"
+    },
+    {
+      "source": "person_isaac",
+      "type": "WORKED_ON",
+      "target": "project_nova"
+    },
+    {
+      "source": "person_isaac",
+      "type": "WORKED_ON",
+      "target": "project_mercury"
+    },
+    {
+      "source": "person_julia",
+      "type": "MEMBER_OF",
+      "target": "team_payments"
+    },
+    {
+      "source": "person_julia",
+      "type": "HAS_SKILL",
+      "target": "skill_airflow"
+    },
+    {
+      "source": "person_julia",
+      "type": "HAS_SKILL",
+      "target": "skill_kafka"
+    },
+    {
+      "source": "person_julia",
+      "type": "HAS_SKILL",
+      "target": "skill_postgresql"
+    },
+    {
+      "source": "person_julia",
+      "type": "WORKED_ON",
+      "target": "project_mercury"
+    },
+    {
+      "source": "person_julia",
+      "type": "WORKED_ON",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "project_atlas",
+      "type": "OWNED_BY",
+      "target": "team_search"
+    },
+    {
+      "source": "person_alice",
+      "type": "LEADS",
+      "target": "project_atlas"
+    },
+    {
+      "source": "project_atlas",
+      "type": "USES",
+      "target": "tech_kafka"
+    },
+    {
+      "source": "project_atlas",
+      "type": "USES",
+      "target": "tech_elasticsearch"
+    },
+    {
+      "source": "project_atlas",
+      "type": "USES",
+      "target": "tech_python"
+    },
+    {
+      "source": "project_atlas",
+      "type": "USES",
+      "target": "tech_kubernetes"
+    },
+    {
+      "source": "project_phoenix",
+      "type": "OWNED_BY",
+      "target": "team_recommendations"
+    },
+    {
+      "source": "person_farah",
+      "type": "LEADS",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "project_phoenix",
+      "type": "USES",
+      "target": "tech_kafka"
+    },
+    {
+      "source": "project_phoenix",
+      "type": "USES",
+      "target": "tech_kubernetes"
+    },
+    {
+      "source": "project_phoenix",
+      "type": "USES",
+      "target": "tech_redis"
+    },
+    {
+      "source": "project_phoenix",
+      "type": "USES",
+      "target": "tech_python"
+    },
+    {
+      "source": "project_nova",
+      "type": "OWNED_BY",
+      "target": "team_trust"
+    },
+    {
+      "source": "person_david",
+      "type": "LEADS",
+      "target": "project_nova"
+    },
+    {
+      "source": "project_nova",
+      "type": "USES",
+      "target": "tech_kafka"
+    },
+    {
+      "source": "project_nova",
+      "type": "USES",
+      "target": "tech_postgresql"
+    },
+    {
+      "source": "project_nova",
+      "type": "USES",
+      "target": "tech_python"
+    },
+    {
+      "source": "project_mercury",
+      "type": "OWNED_BY",
+      "target": "team_payments"
+    },
+    {
+      "source": "person_elena",
+      "type": "LEADS",
+      "target": "project_mercury"
+    },
+    {
+      "source": "project_mercury",
+      "type": "USES",
+      "target": "tech_airflow"
+    },
+    {
+      "source": "project_mercury",
+      "type": "USES",
+      "target": "tech_postgresql"
+    },
+    {
+      "source": "project_mercury",
+      "type": "USES",
+      "target": "tech_python"
+    },
+    {
+      "source": "project_mercury",
+      "type": "USES",
+      "target": "tech_kafka"
+    },
+    {
+      "source": "person_carol",
+      "type": "PROPOSED",
+      "target": "decision_d001"
+    },
+    {
+      "source": "person_alice",
+      "type": "APPROVED",
+      "target": "decision_d001"
+    },
+    {
+      "source": "decision_d001",
+      "type": "AFFECTS",
+      "target": "project_atlas"
+    },
+    {
+      "source": "decision_d001",
+      "type": "INVOLVES",
+      "target": "tech_kafka"
+    },
+    {
+      "source": "person_george",
+      "type": "PROPOSED",
+      "target": "decision_d002"
+    },
+    {
+      "source": "person_alice",
+      "type": "APPROVED",
+      "target": "decision_d002"
+    },
+    {
+      "source": "decision_d002",
+      "type": "AFFECTS",
+      "target": "project_atlas"
+    },
+    {
+      "source": "decision_d002",
+      "type": "INVOLVES",
+      "target": "tech_elasticsearch"
+    },
+    {
+      "source": "person_hannah",
+      "type": "PROPOSED",
+      "target": "decision_d003"
+    },
+    {
+      "source": "person_alice",
+      "type": "APPROVED",
+      "target": "decision_d003"
+    },
+    {
+      "source": "decision_d003",
+      "type": "AFFECTS",
+      "target": "project_atlas"
+    },
+    {
+      "source": "decision_d003",
+      "type": "INVOLVES",
+      "target": "tech_kubernetes"
+    },
+    {
+      "source": "person_bob",
+      "type": "PROPOSED",
+      "target": "decision_d004"
+    },
+    {
+      "source": "person_farah",
+      "type": "APPROVED",
+      "target": "decision_d004"
+    },
+    {
+      "source": "decision_d004",
+      "type": "AFFECTS",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "decision_d004",
+      "type": "INVOLVES",
+      "target": "tech_redis"
+    },
+    {
+      "source": "person_carol",
+      "type": "PROPOSED",
+      "target": "decision_d005"
+    },
+    {
+      "source": "person_farah",
+      "type": "APPROVED",
+      "target": "decision_d005"
+    },
+    {
+      "source": "decision_d005",
+      "type": "AFFECTS",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "decision_d005",
+      "type": "INVOLVES",
+      "target": "tech_kafka"
+    },
+    {
+      "source": "person_isaac",
+      "type": "PROPOSED",
+      "target": "decision_d006"
+    },
+    {
+      "source": "person_david",
+      "type": "APPROVED",
+      "target": "decision_d006"
+    },
+    {
+      "source": "decision_d006",
+      "type": "AFFECTS",
+      "target": "project_nova"
+    },
+    {
+      "source": "decision_d006",
+      "type": "INVOLVES",
+      "target": "tech_postgresql"
+    },
+    {
+      "source": "person_elena",
+      "type": "PROPOSED",
+      "target": "decision_d007"
+    },
+    {
+      "source": "person_julia",
+      "type": "APPROVED",
+      "target": "decision_d007"
+    },
+    {
+      "source": "decision_d007",
+      "type": "AFFECTS",
+      "target": "project_mercury"
+    },
+    {
+      "source": "decision_d007",
+      "type": "INVOLVES",
+      "target": "tech_airflow"
+    },
+    {
+      "source": "person_elena",
+      "type": "PROPOSED",
+      "target": "decision_d008"
+    },
+    {
+      "source": "person_julia",
+      "type": "APPROVED",
+      "target": "decision_d008"
+    },
+    {
+      "source": "decision_d008",
+      "type": "AFFECTS",
+      "target": "project_mercury"
+    },
+    {
+      "source": "decision_d008",
+      "type": "INVOLVES",
+      "target": "tech_postgresql"
+    },
+    {
+      "source": "person_alice",
+      "type": "ATTENDED",
+      "target": "meeting_m001"
+    },
+    {
+      "source": "person_carol",
+      "type": "ATTENDED",
+      "target": "meeting_m001"
+    },
+    {
+      "source": "person_george",
+      "type": "ATTENDED",
+      "target": "meeting_m001"
+    },
+    {
+      "source": "person_hannah",
+      "type": "ATTENDED",
+      "target": "meeting_m001"
+    },
+    {
+      "source": "meeting_m001",
+      "type": "DISCUSSED",
+      "target": "decision_d001"
+    },
+    {
+      "source": "person_alice",
+      "type": "ATTENDED",
+      "target": "meeting_m002"
+    },
+    {
+      "source": "person_george",
+      "type": "ATTENDED",
+      "target": "meeting_m002"
+    },
+    {
+      "source": "person_bob",
+      "type": "ATTENDED",
+      "target": "meeting_m002"
+    },
+    {
+      "source": "meeting_m002",
+      "type": "DISCUSSED",
+      "target": "decision_d002"
+    },
+    {
+      "source": "person_alice",
+      "type": "ATTENDED",
+      "target": "meeting_m003"
+    },
+    {
+      "source": "person_hannah",
+      "type": "ATTENDED",
+      "target": "meeting_m003"
+    },
+    {
+      "source": "person_bob",
+      "type": "ATTENDED",
+      "target": "meeting_m003"
+    },
+    {
+      "source": "meeting_m003",
+      "type": "DISCUSSED",
+      "target": "decision_d003"
+    },
+    {
+      "source": "person_farah",
+      "type": "ATTENDED",
+      "target": "meeting_m004"
+    },
+    {
+      "source": "person_bob",
+      "type": "ATTENDED",
+      "target": "meeting_m004"
+    },
+    {
+      "source": "person_carol",
+      "type": "ATTENDED",
+      "target": "meeting_m004"
+    },
+    {
+      "source": "person_hannah",
+      "type": "ATTENDED",
+      "target": "meeting_m004"
+    },
+    {
+      "source": "person_julia",
+      "type": "ATTENDED",
+      "target": "meeting_m004"
+    },
+    {
+      "source": "meeting_m004",
+      "type": "DISCUSSED",
+      "target": "decision_d004"
+    },
+    {
+      "source": "meeting_m004",
+      "type": "DISCUSSED",
+      "target": "decision_d005"
+    },
+    {
+      "source": "person_david",
+      "type": "ATTENDED",
+      "target": "meeting_m005"
+    },
+    {
+      "source": "person_isaac",
+      "type": "ATTENDED",
+      "target": "meeting_m005"
+    },
+    {
+      "source": "person_carol",
+      "type": "ATTENDED",
+      "target": "meeting_m005"
+    },
+    {
+      "source": "meeting_m005",
+      "type": "DISCUSSED",
+      "target": "decision_d006"
+    },
+    {
+      "source": "person_elena",
+      "type": "ATTENDED",
+      "target": "meeting_m006"
+    },
+    {
+      "source": "person_julia",
+      "type": "ATTENDED",
+      "target": "meeting_m006"
+    },
+    {
+      "source": "person_carol",
+      "type": "ATTENDED",
+      "target": "meeting_m006"
+    },
+    {
+      "source": "person_isaac",
+      "type": "ATTENDED",
+      "target": "meeting_m006"
+    },
+    {
+      "source": "meeting_m006",
+      "type": "DISCUSSED",
+      "target": "decision_d007"
+    },
+    {
+      "source": "meeting_m006",
+      "type": "DISCUSSED",
+      "target": "decision_d008"
+    },
+    {
+      "source": "doc_people_alice",
+      "type": "MENTIONS",
+      "target": "person_alice"
+    },
+    {
+      "source": "doc_people_bob",
+      "type": "MENTIONS",
+      "target": "person_bob"
+    },
+    {
+      "source": "doc_people_carol",
+      "type": "MENTIONS",
+      "target": "person_carol"
+    },
+    {
+      "source": "doc_people_david",
+      "type": "MENTIONS",
+      "target": "person_david"
+    },
+    {
+      "source": "doc_people_elena",
+      "type": "MENTIONS",
+      "target": "person_elena"
+    },
+    {
+      "source": "doc_people_farah",
+      "type": "MENTIONS",
+      "target": "person_farah"
+    },
+    {
+      "source": "doc_people_george",
+      "type": "MENTIONS",
+      "target": "person_george"
+    },
+    {
+      "source": "doc_people_hannah",
+      "type": "MENTIONS",
+      "target": "person_hannah"
+    },
+    {
+      "source": "doc_people_isaac",
+      "type": "MENTIONS",
+      "target": "person_isaac"
+    },
+    {
+      "source": "doc_people_julia",
+      "type": "MENTIONS",
+      "target": "person_julia"
+    },
+    {
+      "source": "doc_project_atlas",
+      "type": "DESCRIBES",
+      "target": "project_atlas"
+    },
+    {
+      "source": "doc_project_phoenix",
+      "type": "DESCRIBES",
+      "target": "project_phoenix"
+    },
+    {
+      "source": "doc_project_nova",
+      "type": "DESCRIBES",
+      "target": "project_nova"
+    },
+    {
+      "source": "doc_project_mercury",
+      "type": "DESCRIBES",
+      "target": "project_mercury"
+    },
+    {
+      "source": "doc_decision_d001",
+      "type": "DOCUMENTS",
+      "target": "decision_d001"
+    },
+    {
+      "source": "doc_decision_d001",
+      "type": "MENTIONS",
+      "target": "person_carol"
+    },
+    {
+      "source": "doc_decision_d001",
+      "type": "MENTIONS",
+      "target": "person_alice"
+    },
+    {
+      "source": "doc_decision_d002",
+      "type": "DOCUMENTS",
+      "target": "decision_d002"
+    },
+    {
+      "source": "doc_decision_d002",
+      "type": "MENTIONS",
+      "target": "person_george"
+    },
+    {
+      "source": "doc_decision_d002",
+      "type": "MENTIONS",
+      "target": "person_alice"
+    },
+    {
+      "source": "doc_decision_d003",
+      "type": "DOCUMENTS",
+      "target": "decision_d003"
+    },
+    {
+      "source": "doc_decision_d003",
+      "type": "MENTIONS",
+      "target": "person_hannah"
+    },
+    {
+      "source": "doc_decision_d003",
+      "type": "MENTIONS",
+      "target": "person_alice"
+    },
+    {
+      "source": "doc_decision_d004",
+      "type": "DOCUMENTS",
+      "target": "decision_d004"
+    },
+    {
+      "source": "doc_decision_d004",
+      "type": "MENTIONS",
+      "target": "person_bob"
+    },
+    {
+      "source": "doc_decision_d004",
+      "type": "MENTIONS",
+      "target": "person_farah"
+    },
+    {
+      "source": "doc_decision_d005",
+      "type": "DOCUMENTS",
+      "target": "decision_d005"
+    },
+    {
+      "source": "doc_decision_d005",
+      "type": "MENTIONS",
+      "target": "person_carol"
+    },
+    {
+      "source": "doc_decision_d005",
+      "type": "MENTIONS",
+      "target": "person_farah"
+    },
+    {
+      "source": "doc_decision_d006",
+      "type": "DOCUMENTS",
+      "target": "decision_d006"
+    },
+    {
+      "source": "doc_decision_d006",
+      "type": "MENTIONS",
+      "target": "person_isaac"
+    },
+    {
+      "source": "doc_decision_d006",
+      "type": "MENTIONS",
+      "target": "person_david"
+    },
+    {
+      "source": "doc_decision_d007",
+      "type": "DOCUMENTS",
+      "target": "decision_d007"
+    },
+    {
+      "source": "doc_decision_d007",
+      "type": "MENTIONS",
+      "target": "person_elena"
+    },
+    {
+      "source": "doc_decision_d007",
+      "type": "MENTIONS",
+      "target": "person_julia"
+    },
+    {
+      "source": "doc_decision_d008",
+      "type": "DOCUMENTS",
+      "target": "decision_d008"
+    },
+    {
+      "source": "doc_decision_d008",
+      "type": "MENTIONS",
+      "target": "person_elena"
+    },
+    {
+      "source": "doc_decision_d008",
+      "type": "MENTIONS",
+      "target": "person_julia"
+    }
+  ]
+}

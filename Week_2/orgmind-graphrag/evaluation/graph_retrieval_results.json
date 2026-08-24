@@ -1,0 +1,348 @@
+[
+  {
+    "id": 1,
+    "category": "single_fact",
+    "question": "What database does Project Phoenix use for its online feature cache?",
+    "expected_answer": "Redis",
+    "route": "project_feature_technology",
+    "parameters": {
+      "project": "Project Phoenix",
+      "keyword": "online feature cache"
+    },
+    "retrieval": [
+      {
+        "project": "Project Phoenix",
+        "decision": "Use Redis for Phoenix online feature cache",
+        "technology": "Redis"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "single_fact",
+    "question": "What is the purpose of Project Atlas?",
+    "expected_answer": "Modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+    "route": "project_purpose",
+    "parameters": {
+      "project": "Project Atlas"
+    },
+    "retrieval": [
+      {
+        "project": "Project Atlas",
+        "document": "project_atlas.md",
+        "source_file": "project_atlas.md",
+        "evidence": "---\ndoc_id: doc_project_atlas\ndoc_type: project_overview\nentity_id: project_atlas\nowner: Search\n---\n# Project Atlas\n\n**Status:** Production  \n**Owning team:** Search  \n**Project lead:** Alice Chen  \n**Core technologies:** Kafka, Elasticsearch, Python, Kubernetes\n\n## Purpose\nModernize product search ranking with fresh behavioral signals and a unified retrieval stack.\n\n## Contributors\nAlice Chen, Bob Singh, George Liu, Hannah Brooks"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "semantic",
+    "question": "Why did Project Atlas adopt Kafka?",
+    "expected_answer": "Atlas needed replayable, ordered product and behavior updates and wanted to decouple producers from ranking consumers.",
+    "route": "decision_rationale",
+    "parameters": {
+      "project": "Project Atlas",
+      "technology": "Kafka"
+    },
+    "retrieval": [
+      {
+        "project": "Project Atlas",
+        "decision": "Adopt Kafka for Atlas change feed",
+        "technology": "Kafka",
+        "document": "decision_d001.md",
+        "source_file": "decision_d001.md",
+        "evidence": "---\ndoc_id: doc_decision_d001\ndoc_type: architecture_decision\nentity_id: decision_d001\nproject_id: project_atlas\ndate: 2026-02-12\n---\n# Adopt Kafka for Atlas change feed\n\n**Decision ID:** decision_d001  \n**Project:** Project Atlas  \n**Technology:** Kafka  \n**Proposed by:** Carol Martinez  \n**Approved by:** Alice Chen  \n**Date:** 2026-02-12\n\n## Decision\nAdopt Kafka for Atlas change feed.\n\n## Rationale\nAtlas needed replayable, ordered product and behavior updates. Kafka provided durable event history and decoupled producers from ranking consumers.\n\n## Alternatives considered\nDirect database polling, Managed queue without replay"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "relationship",
+    "question": "Who worked on Project Phoenix and also has Kubernetes experience?",
+    "expected_answer": [
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "route": "person_project_skill",
+    "parameters": {
+      "project": "Project Phoenix",
+      "skill": "Kubernetes"
+    },
+    "retrieval": [
+      {
+        "person": "Bob Singh",
+        "project": "Project Phoenix",
+        "skill": "Kubernetes"
+      },
+      {
+        "person": "Hannah Brooks",
+        "project": "Project Phoenix",
+        "skill": "Kubernetes"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "relationship",
+    "question": "Which people worked on both Project Atlas and Project Phoenix?",
+    "expected_answer": [
+      "Alice Chen",
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "route": "shared_projects",
+    "parameters": {
+      "project1": "Project Atlas",
+      "project2": "Project Phoenix"
+    },
+    "retrieval": [
+      {
+        "person": "Alice Chen",
+        "project1": "Project Atlas",
+        "project2": "Project Phoenix"
+      },
+      {
+        "person": "Bob Singh",
+        "project1": "Project Atlas",
+        "project2": "Project Phoenix"
+      },
+      {
+        "person": "Carol Martinez",
+        "project1": "Project Atlas",
+        "project2": "Project Phoenix"
+      },
+      {
+        "person": "Hannah Brooks",
+        "project1": "Project Atlas",
+        "project2": "Project Phoenix"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "multi_hop",
+    "question": "Who approved the architecture decisions for technologies used by Project Atlas?",
+    "expected_answer": [
+      "Alice Chen"
+    ],
+    "route": "decision_approvers",
+    "parameters": {
+      "project": "Project Atlas"
+    },
+    "retrieval": [
+      {
+        "approver": "Alice Chen",
+        "decision": "Adopt Kafka for Atlas change feed",
+        "technology": "Kafka",
+        "project": "Project Atlas"
+      },
+      {
+        "approver": "Alice Chen",
+        "decision": "Deploy Atlas ranking services on Kubernetes",
+        "technology": "Kubernetes",
+        "project": "Project Atlas"
+      },
+      {
+        "approver": "Alice Chen",
+        "decision": "Standardize Elasticsearch mappings for Atlas",
+        "technology": "Elasticsearch",
+        "project": "Project Atlas"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "relationship",
+    "question": "Which projects were worked on by members of the Search team?",
+    "expected_answer": [
+      "Project Atlas",
+      "Project Phoenix"
+    ],
+    "route": "team_projects",
+    "parameters": {
+      "team": "Search"
+    },
+    "retrieval": [
+      {
+        "team": "Search",
+        "person": "Alice Chen",
+        "project": "Project Atlas"
+      },
+      {
+        "team": "Search",
+        "person": "George Liu",
+        "project": "Project Atlas"
+      },
+      {
+        "team": "Search",
+        "person": "Alice Chen",
+        "project": "Project Phoenix"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "multi_hop",
+    "question": "Which technologies are used by projects led by Alice Chen?",
+    "expected_answer": [
+      "Kafka",
+      "Elasticsearch",
+      "Python",
+      "Kubernetes"
+    ],
+    "route": "leader_technologies",
+    "parameters": {
+      "person": "Alice Chen"
+    },
+    "retrieval": []
+  },
+  {
+    "id": 9,
+    "category": "multi_hop",
+    "question": "Who is the best person to consult about Kafka based on both project experience and documented technical decisions?",
+    "expected_answer": "Carol Martinez",
+    "route": "expert_lookup",
+    "parameters": {
+      "technology": "Kafka"
+    },
+    "retrieval": [
+      {
+        "person": "Carol Martinez",
+        "projects": [
+          "Project Atlas",
+          "Project Phoenix",
+          "Project Mercury"
+        ],
+        "decisions": [
+          "Adopt Kafka for Atlas change feed",
+          "Use Kafka as Phoenix behavior event bus"
+        ],
+        "project_count": 3,
+        "decision_count": 2,
+        "expertise_score": 7
+      },
+      {
+        "person": "Alice Chen",
+        "projects": [
+          "Project Atlas",
+          "Project Phoenix"
+        ],
+        "decisions": [
+          "Adopt Kafka for Atlas change feed"
+        ],
+        "project_count": 2,
+        "decision_count": 1,
+        "expertise_score": 4
+      },
+      {
+        "person": "Hannah Brooks",
+        "projects": [
+          "Project Atlas",
+          "Project Phoenix"
+        ],
+        "decisions": [],
+        "project_count": 2,
+        "decision_count": 0,
+        "expertise_score": 2
+      },
+      {
+        "person": "Julia Patel",
+        "projects": [
+          "Project Phoenix",
+          "Project Mercury"
+        ],
+        "decisions": [],
+        "project_count": 2,
+        "decision_count": 0,
+        "expertise_score": 2
+      },
+      {
+        "person": "David Kim",
+        "projects": [
+          "Project Nova"
+        ],
+        "decisions": [],
+        "project_count": 1,
+        "decision_count": 0,
+        "expertise_score": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "multi_hop",
+    "question": "Which architecture decisions affected projects owned by teams whose members also worked on Project Phoenix?",
+    "expected_answer": [
+      "Adopt Kafka for Atlas change feed",
+      "Standardize Elasticsearch mappings for Atlas",
+      "Deploy Atlas ranking services on Kubernetes",
+      "Use Redis for Phoenix online feature cache",
+      "Use Kafka as Phoenix behavior event bus"
+    ],
+    "route": "multi_hop_decisions",
+    "parameters": {
+      "project": "Project Phoenix"
+    },
+    "retrieval": [
+      {
+        "decision": "Adopt Kafka for Atlas change feed",
+        "project": "Project Atlas",
+        "team": "Search",
+        "connecting_people": [
+          "Alice Chen"
+        ]
+      },
+      {
+        "decision": "Deploy Atlas ranking services on Kubernetes",
+        "project": "Project Atlas",
+        "team": "Search",
+        "connecting_people": [
+          "Alice Chen"
+        ]
+      },
+      {
+        "decision": "Standardize Elasticsearch mappings for Atlas",
+        "project": "Project Atlas",
+        "team": "Search",
+        "connecting_people": [
+          "Alice Chen"
+        ]
+      },
+      {
+        "decision": "Use Airflow for Mercury settlement workflows",
+        "project": "Project Mercury",
+        "team": "Payments",
+        "connecting_people": [
+          "Julia Patel"
+        ]
+      },
+      {
+        "decision": "Use Kafka as Phoenix behavior event bus",
+        "project": "Project Phoenix",
+        "team": "Recommendations",
+        "connecting_people": [
+          "Farah Khan",
+          "Bob Singh"
+        ]
+      },
+      {
+        "decision": "Use PostgreSQL as Mercury reconciliation ledger",
+        "project": "Project Mercury",
+        "team": "Payments",
+        "connecting_people": [
+          "Julia Patel"
+        ]
+      },
+      {
+        "decision": "Use Redis for Phoenix online feature cache",
+        "project": "Project Phoenix",
+        "team": "Recommendations",
+        "connecting_people": [
+          "Farah Khan",
+          "Bob Singh"
+        ]
+      }
+    ]
+  }
+]

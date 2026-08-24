@@ -1,0 +1,125 @@
+[
+  {
+    "id": 1,
+    "category": "single_fact",
+    "question": "What database does Project Phoenix use for its online feature cache?",
+    "expected_answer": "Redis",
+    "answer": "Project Phoenix uses Redis for its online feature cache.",
+    "latency_seconds": 3.7726002919953316,
+    "input_tokens": 947,
+    "output_tokens": 11
+  },
+  {
+    "id": 2,
+    "category": "single_fact",
+    "question": "What is the purpose of Project Atlas?",
+    "expected_answer": "Modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+    "answer": "The purpose of Project Atlas is to modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+    "latency_seconds": 1.3463017079629935,
+    "input_tokens": 837,
+    "output_tokens": 23
+  },
+  {
+    "id": 3,
+    "category": "semantic",
+    "question": "Why did Project Atlas adopt Kafka?",
+    "expected_answer": "Atlas needed replayable, ordered product and behavior updates and wanted to decouple producers from ranking consumers.",
+    "answer": "Project Atlas adopted Kafka because it provided durable event history, enabled replayable and ordered product and behavior updates, and decoupled producers from ranking consumers.",
+    "latency_seconds": 0.9716108340071514,
+    "input_tokens": 840,
+    "output_tokens": 31
+  },
+  {
+    "id": 4,
+    "category": "relationship",
+    "question": "Who worked on Project Phoenix and also has Kubernetes experience?",
+    "expected_answer": [
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "answer": "Bob Singh and Hannah Brooks worked on Project Phoenix and have Kubernetes experience.",
+    "latency_seconds": 0.6296906669740565,
+    "input_tokens": 766,
+    "output_tokens": 15
+  },
+  {
+    "id": 5,
+    "category": "relationship",
+    "question": "Which people worked on both Project Atlas and Project Phoenix?",
+    "expected_answer": [
+      "Alice Chen",
+      "Bob Singh",
+      "Hannah Brooks"
+    ],
+    "answer": "The people who worked on both Project Atlas and Project Phoenix are:\n\n- Alice Chen\n- Bob Singh\n- Hannah Brooks\n\nThese individuals are listed as contributors to both projects in their respective project overviews.",
+    "latency_seconds": 1.2999675000319257,
+    "input_tokens": 792,
+    "output_tokens": 42
+  },
+  {
+    "id": 6,
+    "category": "multi_hop",
+    "question": "Who approved the architecture decisions for technologies used by Project Atlas?",
+    "expected_answer": [
+      "Alice Chen"
+    ],
+    "answer": "Alice Chen approved the architecture decisions for technologies used by Project Atlas, including Kafka, Elasticsearch, and Kubernetes.",
+    "latency_seconds": 0.7439255000208504,
+    "input_tokens": 939,
+    "output_tokens": 22
+  },
+  {
+    "id": 7,
+    "category": "relationship",
+    "question": "Which projects were worked on by members of the Search team?",
+    "expected_answer": [
+      "Project Atlas",
+      "Project Phoenix"
+    ],
+    "answer": "The only project worked on by members of the Search team, based on the retrieved evidence, is Project Atlas. \n\nThis is supported by:\n- Project Atlas being owned by the Search team (Source 1, Source 5).\n- Alice Chen (Principal Search Engineer, Search team) leading Project Atlas (Source 1, Source 4).\n- George Liu (Search Engineer, Search team) contributing to Project Atlas (Source 2, Source 3).\n- Hannah Brooks being listed as a contact for Kubernetes production readiness, which is part of Project Atlas (Source 3, Source 5), though her direct involvement is not explicitly stated beyond technical contact.\n\nNo other projects are confirmed to be worked on by members of the Search team in the provided evidence.",
+    "latency_seconds": 5.773257250024471,
+    "input_tokens": 745,
+    "output_tokens": 153
+  },
+  {
+    "id": 8,
+    "category": "multi_hop",
+    "question": "Which technologies are used by projects led by Alice Chen?",
+    "expected_answer": [
+      "Kafka",
+      "Elasticsearch",
+      "Python",
+      "Kubernetes"
+    ],
+    "answer": "The technologies used by projects led by Alice Chen are Kafka, Elasticsearch, Python, and Kubernetes. These are used in Project Atlas, which she leads. Project Phoenix, which she contributes to, uses Kafka, Kubernetes, Redis, and Python, but it is led by Farah Khan. Therefore, the technologies directly associated with projects led by Alice Chen are Kafka, Elasticsearch, Python, and Kubernetes.",
+    "latency_seconds": 2.2196862080018036,
+    "input_tokens": 767,
+    "output_tokens": 80
+  },
+  {
+    "id": 9,
+    "category": "multi_hop",
+    "question": "Who is the best person to consult about Kafka based on both project experience and documented technical decisions?",
+    "expected_answer": "Carol Martinez",
+    "answer": "Carol Martinez is the best person to consult about Kafka based on both project experience and documented technical decisions. She proposed the Kafka decisions for both Project Atlas and Project Phoenix, maintains the organization-wide streaming guidance, and is the primary technical contact for Kafka architecture.",
+    "latency_seconds": 1.9275964999687858,
+    "input_tokens": 919,
+    "output_tokens": 51
+  },
+  {
+    "id": 10,
+    "category": "multi_hop",
+    "question": "Which architecture decisions affected projects owned by teams whose members also worked on Project Phoenix?",
+    "expected_answer": [
+      "Adopt Kafka for Atlas change feed",
+      "Standardize Elasticsearch mappings for Atlas",
+      "Deploy Atlas ranking services on Kubernetes",
+      "Use Redis for Phoenix online feature cache",
+      "Use Kafka as Phoenix behavior event bus"
+    ],
+    "answer": "The architecture decisions that affected projects owned by teams whose members also worked on Project Phoenix are:\n\n- Use Redis for Phoenix online feature cache (decision_d004)\n- Use Kafka as Phoenix behavior event bus (decision_d005)\n\nThese decisions were made during the Phoenix serving architecture review and impacted Project Phoenix, which is owned by the Recommendations team. Members of the Recommendations team, including Farah Khan and Bob Singh, also worked on Project Phoenix. Additionally, Carol Martinez and Hannah Brooks, who are technical contacts for Kafka and Kubernetes respectively, contributed to the decision-making process. Since Alice Chen (from Search) and Julia Patel (from Payments) are also contributors to Project Phoenix, their respective teams (Search and Payments) may have been affected by the decisions involving Kafka and payment-related workflows, though no direct impact on their projects is specified in the evidence.",
+    "latency_seconds": 4.170892791997176,
+    "input_tokens": 906,
+    "output_tokens": 173
+  }
+]

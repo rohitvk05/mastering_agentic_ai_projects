@@ -1,0 +1,11 @@
+Q,Category,Graph Score,Vector Score,Winner,Graph Latency,Vector Latency,Agent Score,Agent Latency,Initial Route,Final Route,Attempts,Three-Way Winner,Best Static Score,Agent vs Best Static
+1,single_fact,100.0,100.0,Tie,3.49,3.77,100.0,6.622871749976184,graph,graph,1,Tie,100.0,0.0
+2,single_fact,100.0,100.0,Tie,0.7,1.35,100.0,9.427434916025959,vector,vector,1,Tie,100.0,0.0
+3,semantic,100.0,100.0,Tie,0.95,0.97,100.0,21.19244458398316,hybrid,hybrid,1,Tie,100.0,0.0
+4,relationship,100.0,100.0,Tie,1.46,0.63,100.0,11.920681582996622,graph,graph,1,Tie,100.0,0.0
+5,relationship,83.3,100.0,VectorRAG,0.79,1.3,83.33333333333334,12.861831707996316,graph,graph,1,VectorRAG,100.0,-16.666666666666657
+6,multi_hop,100.0,100.0,Tie,0.79,0.74,100.0,11.159241000015754,hybrid,hybrid,1,Tie,100.0,0.0
+7,relationship,100.0,33.3,GraphRAG,2.21,5.77,100.0,8.037958792003337,graph,graph,1,Tie,100.0,0.0
+8,multi_hop,33.3,100.0,VectorRAG,0.44,2.22,100.0,28.0327653750428,graph,hybrid,2,Tie,100.0,0.0
+9,multi_hop,100.0,100.0,Tie,1.65,1.93,100.0,22.194245834019966,hybrid,hybrid,1,Tie,100.0,0.0
+10,multi_hop,66.7,16.7,GraphRAG,2.24,4.17,100.0,22.840806499996688,hybrid,hybrid,1,Agentic RAG,66.7,33.3

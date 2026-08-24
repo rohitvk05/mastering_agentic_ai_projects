@@ -1,0 +1,718 @@
+{
+  "organization": "Acme AI",
+  "synthetic": true,
+  "teams": [
+    {
+      "id": "team_search",
+      "name": "Search",
+      "mission": "Build retrieval, ranking, and query understanding systems."
+    },
+    {
+      "id": "team_recommendations",
+      "name": "Recommendations",
+      "mission": "Build real-time personalized ranking and recommendation experiences."
+    },
+    {
+      "id": "team_trust",
+      "name": "Trust & Safety",
+      "mission": "Detect abuse, fraud, and risky account behavior."
+    },
+    {
+      "id": "team_data_platform",
+      "name": "Data Platform",
+      "mission": "Provide reliable event, orchestration, and analytics infrastructure."
+    },
+    {
+      "id": "team_payments",
+      "name": "Payments",
+      "mission": "Build payment processing and financial reconciliation systems."
+    }
+  ],
+  "skills": [
+    {
+      "id": "skill_kafka",
+      "name": "Kafka"
+    },
+    {
+      "id": "skill_kubernetes",
+      "name": "Kubernetes"
+    },
+    {
+      "id": "skill_elasticsearch",
+      "name": "Elasticsearch"
+    },
+    {
+      "id": "skill_python",
+      "name": "Python"
+    },
+    {
+      "id": "skill_redis",
+      "name": "Redis"
+    },
+    {
+      "id": "skill_postgresql",
+      "name": "PostgreSQL"
+    },
+    {
+      "id": "skill_airflow",
+      "name": "Airflow"
+    },
+    {
+      "id": "skill_experimentation",
+      "name": "Experimentation"
+    }
+  ],
+  "technologies": [
+    {
+      "id": "tech_kafka",
+      "name": "Kafka"
+    },
+    {
+      "id": "tech_kubernetes",
+      "name": "Kubernetes"
+    },
+    {
+      "id": "tech_elasticsearch",
+      "name": "Elasticsearch"
+    },
+    {
+      "id": "tech_python",
+      "name": "Python"
+    },
+    {
+      "id": "tech_redis",
+      "name": "Redis"
+    },
+    {
+      "id": "tech_postgresql",
+      "name": "PostgreSQL"
+    },
+    {
+      "id": "tech_airflow",
+      "name": "Airflow"
+    }
+  ],
+  "people": [
+    {
+      "id": "person_alice",
+      "name": "Alice Chen",
+      "title": "Principal Search Engineer",
+      "team": "team_search",
+      "skills": [
+        "skill_kafka",
+        "skill_elasticsearch",
+        "skill_python"
+      ],
+      "projects": [
+        "project_atlas",
+        "project_phoenix"
+      ],
+      "summary": "Leads search ranking architecture and cross-team retrieval initiatives."
+    },
+    {
+      "id": "person_bob",
+      "name": "Bob Singh",
+      "title": "Senior ML Engineer",
+      "team": "team_recommendations",
+      "skills": [
+        "skill_kubernetes",
+        "skill_python",
+        "skill_redis"
+      ],
+      "projects": [
+        "project_phoenix",
+        "project_atlas"
+      ],
+      "summary": "Builds low-latency recommendation serving and feature caching systems."
+    },
+    {
+      "id": "person_carol",
+      "name": "Carol Martinez",
+      "title": "Staff Data Platform Engineer",
+      "team": "team_data_platform",
+      "skills": [
+        "skill_kafka",
+        "skill_airflow",
+        "skill_postgresql",
+        "skill_python"
+      ],
+      "projects": [
+        "project_phoenix",
+        "project_mercury"
+      ],
+      "summary": "Owns event-streaming patterns and data reliability standards."
+    },
+    {
+      "id": "person_david",
+      "name": "David Kim",
+      "title": "Engineering Manager",
+      "team": "team_trust",
+      "skills": [
+        "skill_python",
+        "skill_kafka"
+      ],
+      "projects": [
+        "project_nova"
+      ],
+      "summary": "Leads fraud and abuse detection engineering."
+    },
+    {
+      "id": "person_elena",
+      "name": "Elena Rossi",
+      "title": "Senior Payments Engineer",
+      "team": "team_payments",
+      "skills": [
+        "skill_postgresql",
+        "skill_airflow",
+        "skill_python"
+      ],
+      "projects": [
+        "project_mercury"
+      ],
+      "summary": "Designs settlement and reconciliation workflows."
+    },
+    {
+      "id": "person_farah",
+      "name": "Farah Khan",
+      "title": "Product Manager",
+      "team": "team_recommendations",
+      "skills": [
+        "skill_experimentation"
+      ],
+      "projects": [
+        "project_phoenix"
+      ],
+      "summary": "Owns Project Phoenix roadmap, experimentation, and launch decisions."
+    },
+    {
+      "id": "person_george",
+      "name": "George Liu",
+      "title": "Search Engineer",
+      "team": "team_search",
+      "skills": [
+        "skill_elasticsearch",
+        "skill_python"
+      ],
+      "projects": [
+        "project_atlas"
+      ],
+      "summary": "Specializes in index design, query analysis, and ranking diagnostics."
+    },
+    {
+      "id": "person_hannah",
+      "name": "Hannah Brooks",
+      "title": "Platform SRE",
+      "team": "team_data_platform",
+      "skills": [
+        "skill_kubernetes",
+        "skill_kafka"
+      ],
+      "projects": [
+        "project_atlas",
+        "project_phoenix"
+      ],
+      "summary": "Builds Kubernetes deployment standards and reliability controls."
+    },
+    {
+      "id": "person_isaac",
+      "name": "Isaac Brown",
+      "title": "Trust & Safety Engineer",
+      "team": "team_trust",
+      "skills": [
+        "skill_postgresql",
+        "skill_python"
+      ],
+      "projects": [
+        "project_nova",
+        "project_mercury"
+      ],
+      "summary": "Builds case-management and risk decision services."
+    },
+    {
+      "id": "person_julia",
+      "name": "Julia Patel",
+      "title": "Payments Tech Lead",
+      "team": "team_payments",
+      "skills": [
+        "skill_airflow",
+        "skill_kafka",
+        "skill_postgresql"
+      ],
+      "projects": [
+        "project_mercury",
+        "project_phoenix"
+      ],
+      "summary": "Leads payment-platform architecture and operational readiness."
+    }
+  ],
+  "projects": [
+    {
+      "id": "project_atlas",
+      "name": "Project Atlas",
+      "owner_team": "team_search",
+      "lead": "person_alice",
+      "purpose": "Modernize product search ranking with fresh behavioral signals and a unified retrieval stack.",
+      "technologies": [
+        "tech_kafka",
+        "tech_elasticsearch",
+        "tech_python",
+        "tech_kubernetes"
+      ],
+      "status": "Production"
+    },
+    {
+      "id": "project_phoenix",
+      "name": "Project Phoenix",
+      "owner_team": "team_recommendations",
+      "lead": "person_farah",
+      "purpose": "Serve real-time personalized product recommendations using streaming behavior and low-latency feature access.",
+      "technologies": [
+        "tech_kafka",
+        "tech_kubernetes",
+        "tech_redis",
+        "tech_python"
+      ],
+      "status": "Production"
+    },
+    {
+      "id": "project_nova",
+      "name": "Project Nova",
+      "owner_team": "team_trust",
+      "lead": "person_david",
+      "purpose": "Detect suspicious account behavior and route high-risk cases for investigation.",
+      "technologies": [
+        "tech_kafka",
+        "tech_postgresql",
+        "tech_python"
+      ],
+      "status": "Pilot"
+    },
+    {
+      "id": "project_mercury",
+      "name": "Project Mercury",
+      "owner_team": "team_payments",
+      "lead": "person_elena",
+      "purpose": "Automate payment settlement reconciliation and exception handling.",
+      "technologies": [
+        "tech_airflow",
+        "tech_postgresql",
+        "tech_python",
+        "tech_kafka"
+      ],
+      "status": "Production"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "decision_d001",
+      "title": "Adopt Kafka for Atlas change feed",
+      "project": "project_atlas",
+      "technology": "tech_kafka",
+      "proposed_by": "person_carol",
+      "approved_by": "person_alice",
+      "date": "2026-02-12",
+      "rationale": "Atlas needed replayable, ordered product and behavior updates. Kafka provided durable event history and decoupled producers from ranking consumers.",
+      "alternatives": [
+        "Direct database polling",
+        "Managed queue without replay"
+      ]
+    },
+    {
+      "id": "decision_d002",
+      "title": "Standardize Elasticsearch mappings for Atlas",
+      "project": "project_atlas",
+      "technology": "tech_elasticsearch",
+      "proposed_by": "person_george",
+      "approved_by": "person_alice",
+      "date": "2026-02-28",
+      "rationale": "Inconsistent field mappings caused relevance drift across indexes. A shared template made analyzers and ranking fields predictable.",
+      "alternatives": [
+        "Per-index mappings",
+        "Schema-on-read"
+      ]
+    },
+    {
+      "id": "decision_d003",
+      "title": "Deploy Atlas ranking services on Kubernetes",
+      "project": "project_atlas",
+      "technology": "tech_kubernetes",
+      "proposed_by": "person_hannah",
+      "approved_by": "person_alice",
+      "date": "2026-03-15",
+      "rationale": "The team needed controlled rollouts, autoscaling, and standard health checks for ranking services.",
+      "alternatives": [
+        "Long-running VMs",
+        "Serverless functions"
+      ]
+    },
+    {
+      "id": "decision_d004",
+      "title": "Use Redis for Phoenix online feature cache",
+      "project": "project_phoenix",
+      "technology": "tech_redis",
+      "proposed_by": "person_bob",
+      "approved_by": "person_farah",
+      "date": "2026-04-03",
+      "rationale": "Phoenix required predictable sub-20ms feature lookups during recommendation ranking. Redis met latency and operational requirements.",
+      "alternatives": [
+        "Read directly from PostgreSQL",
+        "In-process cache only"
+      ]
+    },
+    {
+      "id": "decision_d005",
+      "title": "Use Kafka as Phoenix behavior event bus",
+      "project": "project_phoenix",
+      "technology": "tech_kafka",
+      "proposed_by": "person_carol",
+      "approved_by": "person_farah",
+      "date": "2026-04-11",
+      "rationale": "Recommendation features needed near-real-time user behavior with replay for backfills. Kafka aligned Phoenix with the company streaming standard.",
+      "alternatives": [
+        "Batch files every hour",
+        "Point-to-point queues"
+      ]
+    },
+    {
+      "id": "decision_d006",
+      "title": "Use PostgreSQL for Nova investigation cases",
+      "project": "project_nova",
+      "technology": "tech_postgresql",
+      "proposed_by": "person_isaac",
+      "approved_by": "person_david",
+      "date": "2026-05-07",
+      "rationale": "Investigation cases required transactional updates, auditability, and flexible analyst queries.",
+      "alternatives": [
+        "Document database",
+        "Flat files"
+      ]
+    },
+    {
+      "id": "decision_d007",
+      "title": "Use Airflow for Mercury settlement workflows",
+      "project": "project_mercury",
+      "technology": "tech_airflow",
+      "proposed_by": "person_elena",
+      "approved_by": "person_julia",
+      "date": "2026-05-22",
+      "rationale": "Settlement jobs have dependencies, retries, and cutoff windows. Airflow made orchestration and operational visibility explicit.",
+      "alternatives": [
+        "Cron jobs",
+        "Custom scheduler"
+      ]
+    },
+    {
+      "id": "decision_d008",
+      "title": "Use PostgreSQL as Mercury reconciliation ledger",
+      "project": "project_mercury",
+      "technology": "tech_postgresql",
+      "proposed_by": "person_elena",
+      "approved_by": "person_julia",
+      "date": "2026-05-29",
+      "rationale": "Mercury needed a transactional source of truth for settlement status, discrepancies, and audit trails.",
+      "alternatives": [
+        "Object storage tables",
+        "Key-value store"
+      ]
+    }
+  ],
+  "meetings": [
+    {
+      "id": "meeting_m001",
+      "title": "Atlas architecture review",
+      "date": "2026-02-12",
+      "participants": [
+        "person_alice",
+        "person_carol",
+        "person_george",
+        "person_hannah"
+      ],
+      "projects": [
+        "project_atlas"
+      ],
+      "decisions": [
+        "decision_d001"
+      ]
+    },
+    {
+      "id": "meeting_m002",
+      "title": "Atlas relevance schema review",
+      "date": "2026-02-28",
+      "participants": [
+        "person_alice",
+        "person_george",
+        "person_bob"
+      ],
+      "projects": [
+        "project_atlas"
+      ],
+      "decisions": [
+        "decision_d002"
+      ]
+    },
+    {
+      "id": "meeting_m003",
+      "title": "Atlas production readiness review",
+      "date": "2026-03-15",
+      "participants": [
+        "person_alice",
+        "person_hannah",
+        "person_bob"
+      ],
+      "projects": [
+        "project_atlas"
+      ],
+      "decisions": [
+        "decision_d003"
+      ]
+    },
+    {
+      "id": "meeting_m004",
+      "title": "Phoenix serving architecture review",
+      "date": "2026-04-11",
+      "participants": [
+        "person_farah",
+        "person_bob",
+        "person_carol",
+        "person_hannah",
+        "person_julia"
+      ],
+      "projects": [
+        "project_phoenix"
+      ],
+      "decisions": [
+        "decision_d004",
+        "decision_d005"
+      ]
+    },
+    {
+      "id": "meeting_m005",
+      "title": "Nova case platform review",
+      "date": "2026-05-07",
+      "participants": [
+        "person_david",
+        "person_isaac",
+        "person_carol"
+      ],
+      "projects": [
+        "project_nova"
+      ],
+      "decisions": [
+        "decision_d006"
+      ]
+    },
+    {
+      "id": "meeting_m006",
+      "title": "Mercury settlement design review",
+      "date": "2026-05-29",
+      "participants": [
+        "person_elena",
+        "person_julia",
+        "person_carol",
+        "person_isaac"
+      ],
+      "projects": [
+        "project_mercury"
+      ],
+      "decisions": [
+        "decision_d007",
+        "decision_d008"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc_people_alice",
+      "path": "data/people/person_alice.md",
+      "type": "person_profile",
+      "entity_id": "person_alice"
+    },
+    {
+      "id": "doc_people_bob",
+      "path": "data/people/person_bob.md",
+      "type": "person_profile",
+      "entity_id": "person_bob"
+    },
+    {
+      "id": "doc_people_carol",
+      "path": "data/people/person_carol.md",
+      "type": "person_profile",
+      "entity_id": "person_carol"
+    },
+    {
+      "id": "doc_people_david",
+      "path": "data/people/person_david.md",
+      "type": "person_profile",
+      "entity_id": "person_david"
+    },
+    {
+      "id": "doc_people_elena",
+      "path": "data/people/person_elena.md",
+      "type": "person_profile",
+      "entity_id": "person_elena"
+    },
+    {
+      "id": "doc_people_farah",
+      "path": "data/people/person_farah.md",
+      "type": "person_profile",
+      "entity_id": "person_farah"
+    },
+    {
+      "id": "doc_people_george",
+      "path": "data/people/person_george.md",
+      "type": "person_profile",
+      "entity_id": "person_george"
+    },
+    {
+      "id": "doc_people_hannah",
+      "path": "data/people/person_hannah.md",
+      "type": "person_profile",
+      "entity_id": "person_hannah"
+    },
+    {
+      "id": "doc_people_isaac",
+      "path": "data/people/person_isaac.md",
+      "type": "person_profile",
+      "entity_id": "person_isaac"
+    },
+    {
+      "id": "doc_people_julia",
+      "path": "data/people/person_julia.md",
+      "type": "person_profile",
+      "entity_id": "person_julia"
+    },
+    {
+      "id": "doc_project_atlas",
+      "path": "data/projects/project_atlas.md",
+      "type": "project_overview",
+      "entity_id": "project_atlas"
+    },
+    {
+      "id": "doc_project_phoenix",
+      "path": "data/projects/project_phoenix.md",
+      "type": "project_overview",
+      "entity_id": "project_phoenix"
+    },
+    {
+      "id": "doc_project_nova",
+      "path": "data/projects/project_nova.md",
+      "type": "project_overview",
+      "entity_id": "project_nova"
+    },
+    {
+      "id": "doc_project_mercury",
+      "path": "data/projects/project_mercury.md",
+      "type": "project_overview",
+      "entity_id": "project_mercury"
+    },
+    {
+      "id": "doc_decision_d001",
+      "path": "data/decisions/decision_d001.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d001"
+    },
+    {
+      "id": "doc_decision_d002",
+      "path": "data/decisions/decision_d002.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d002"
+    },
+    {
+      "id": "doc_decision_d003",
+      "path": "data/decisions/decision_d003.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d003"
+    },
+    {
+      "id": "doc_decision_d004",
+      "path": "data/decisions/decision_d004.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d004"
+    },
+    {
+      "id": "doc_decision_d005",
+      "path": "data/decisions/decision_d005.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d005"
+    },
+    {
+      "id": "doc_decision_d006",
+      "path": "data/decisions/decision_d006.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d006"
+    },
+    {
+      "id": "doc_decision_d007",
+      "path": "data/decisions/decision_d007.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d007"
+    },
+    {
+      "id": "doc_decision_d008",
+      "path": "data/decisions/decision_d008.md",
+      "type": "architecture_decision",
+      "entity_id": "decision_d008"
+    },
+    {
+      "id": "doc_meeting_m001",
+      "path": "data/meetings/meeting_m001.md",
+      "type": "meeting_notes",
+      "entity_id": "meeting_m001"
+    },
+    {
+      "id": "doc_meeting_m002",
+      "path": "data/meetings/meeting_m002.md",
+      "type": "meeting_notes",
+      "entity_id": "meeting_m002"
+    },
+    {
+      "id": "doc_meeting_m003",
+      "path": "data/meetings/meeting_m003.md",
+      "type": "meeting_notes",
+      "entity_id": "meeting_m003"
+    },
+    {
+      "id": "doc_meeting_m004",
+      "path": "data/meetings/meeting_m004.md",
+      "type": "meeting_notes",
+      "entity_id": "meeting_m004"
+    },
+    {
+      "id": "doc_meeting_m005",
+      "path": "data/meetings/meeting_m005.md",
+      "type": "meeting_notes",
+      "entity_id": "meeting_m005"
+    },
+    {
+      "id": "doc_meeting_m006",
+      "path": "data/meetings/meeting_m006.md",
+      "type": "meeting_notes",
+      "entity_id": "meeting_m006"
+    },
+    {
+      "id": "doc_tech_streaming_standard",
+      "path": "data/technical_docs/streaming_platform_standard.md",
+      "type": "technical_document"
+    },
+    {
+      "id": "doc_tech_kubernetes_standard",
+      "path": "data/technical_docs/kubernetes_service_standard.md",
+      "type": "technical_document"
+    },
+    {
+      "id": "doc_tech_search_architecture",
+      "path": "data/technical_docs/search_architecture.md",
+      "type": "technical_document"
+    },
+    {
+      "id": "doc_tech_recommendation_architecture",
+      "path": "data/technical_docs/recommendation_architecture.md",
+      "type": "technical_document"
+    },
+    {
+      "id": "doc_tech_data_ownership",
+      "path": "data/technical_docs/project_ownership_and_contacts.md",
+      "type": "technical_document"
+    }
+  ]
+}

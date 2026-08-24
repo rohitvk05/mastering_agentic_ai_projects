@@ -1,0 +1,143 @@
+{
+  "entity_metrics": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "expected": 48,
+    "actual": 48,
+    "correct": 48
+  },
+  "relationship_metrics": {
+    "precision": 0.9541984732824428,
+    "recall": 0.9191176470588235,
+    "f1": 0.9363295880149813,
+    "expected": 136,
+    "actual": 131,
+    "correct": 125
+  },
+  "missing_entities": [],
+  "unexpected_entities": [],
+  "missing_relationships": [
+    [
+      "PERSON",
+      "Alice Chen",
+      "ATTENDED",
+      "MEETING",
+      "Atlas relevance schema review"
+    ],
+    [
+      "PERSON",
+      "Alice Chen",
+      "LEADS",
+      "PROJECT",
+      "Project Atlas"
+    ],
+    [
+      "PERSON",
+      "Bob Singh",
+      "ATTENDED",
+      "MEETING",
+      "Atlas relevance schema review"
+    ],
+    [
+      "PERSON",
+      "Carol Martinez",
+      "ATTENDED",
+      "MEETING",
+      "Mercury settlement design review"
+    ],
+    [
+      "PERSON",
+      "David Kim",
+      "LEADS",
+      "PROJECT",
+      "Project Nova"
+    ],
+    [
+      "PERSON",
+      "Elena Rossi",
+      "ATTENDED",
+      "MEETING",
+      "Mercury settlement design review"
+    ],
+    [
+      "PERSON",
+      "Elena Rossi",
+      "LEADS",
+      "PROJECT",
+      "Project Mercury"
+    ],
+    [
+      "PERSON",
+      "Farah Khan",
+      "LEADS",
+      "PROJECT",
+      "Project Phoenix"
+    ],
+    [
+      "PERSON",
+      "George Liu",
+      "ATTENDED",
+      "MEETING",
+      "Atlas relevance schema review"
+    ],
+    [
+      "PERSON",
+      "Isaac Brown",
+      "ATTENDED",
+      "MEETING",
+      "Mercury settlement design review"
+    ],
+    [
+      "PERSON",
+      "Julia Patel",
+      "ATTENDED",
+      "MEETING",
+      "Mercury settlement design review"
+    ]
+  ],
+  "unexpected_relationships": [
+    [
+      "PERSON",
+      "Carol Martinez",
+      "LEADS",
+      "PROJECT",
+      "Project Atlas"
+    ],
+    [
+      "PERSON",
+      "Carol Martinez",
+      "LEADS",
+      "PROJECT",
+      "Project Phoenix"
+    ],
+    [
+      "PERSON",
+      "Carol Martinez",
+      "WORKED_ON",
+      "PROJECT",
+      "Project Atlas"
+    ],
+    [
+      "PERSON",
+      "Hannah Brooks",
+      "LEADS",
+      "PROJECT",
+      "Project Atlas"
+    ],
+    [
+      "PERSON",
+      "Julia Patel",
+      "LEADS",
+      "PROJECT",
+      "Project Mercury"
+    ],
+    [
+      "PERSON",
+      "Julia Patel",
+      "LEADS",
+      "PROJECT",
+      "Project Phoenix"
+    ]
+  ]
+}
