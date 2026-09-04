@@ -1,0 +1,37 @@
+[
+  {
+    "policy_id": "POL-001",
+    "airline": "United",
+    "topic": "cancellation_rebooking",
+    "rule": "For airline-controlled cancellations, travelers may be rebooked on the next available eligible flight without a change fee.",
+    "requires_human_approval": true
+  },
+  {
+    "policy_id": "POL-002",
+    "airline": "United",
+    "topic": "overnight_delay",
+    "rule": "Hotel accommodation may be considered for qualifying airline-controlled overnight disruptions, subject to eligibility.",
+    "requires_human_approval": true
+  },
+  {
+    "policy_id": "POL-003",
+    "airline": "Generic",
+    "topic": "alternate_airport",
+    "rule": "Alternate airports may be proposed when they are reasonably reachable and materially improve recovery.",
+    "requires_human_approval": false
+  },
+  {
+    "policy_id": "POL-004",
+    "airline": "Generic",
+    "topic": "payment",
+    "rule": "The agent must never charge a card, issue a refund, or accept a fare increase without explicit traveler approval.",
+    "requires_human_approval": true
+  },
+  {
+    "policy_id": "POL-005",
+    "airline": "Generic",
+    "topic": "escalation",
+    "rule": "Escalate when no viable recovery exists, when repeated tool failures occur, or when the request involves disputes, exceptions, safety, or identity concerns.",
+    "requires_human_approval": false
+  }
+]

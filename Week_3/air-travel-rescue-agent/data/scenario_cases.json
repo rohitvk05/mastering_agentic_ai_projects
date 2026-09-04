@@ -1,0 +1,55 @@
+[
+  {
+    "scenario_id": "SCN-001",
+    "name": "Cancelled flight with easy same-airport recovery",
+    "user_utterance": "My United flight UA900 from SFO to Las Vegas was cancelled. I need to get there tonight and can spend up to $150 extra.",
+    "booking_id": "BR1001",
+    "expected_disruption_type": "cancelled",
+    "expected_behavior": [
+      "find viable SFO-LAS options",
+      "recommend UA901",
+      "request approval before rebooking"
+    ]
+  },
+  {
+    "scenario_id": "SCN-002",
+    "name": "Cancelled flight with strict arrival deadline",
+    "user_utterance": "My flight to Las Vegas was cancelled. I must arrive before 11 AM tomorrow and I prefer nonstop if possible.",
+    "booking_id": "BR1001",
+    "expected_behavior": [
+      "filter by deadline",
+      "compare same-airport and alternate-airport options",
+      "explain tradeoffs"
+    ]
+  },
+  {
+    "scenario_id": "SCN-003",
+    "name": "Missed connection risk",
+    "user_utterance": "My SFO to Denver flight UA910 is delayed and I connect to UA911 for Boston. Am I going to miss my connection?",
+    "booking_id": "BR1002",
+    "expected_disruption_type": "missed_connection",
+    "expected_behavior": [
+      "calculate connection feasibility",
+      "search DEN-BOS recovery if infeasible"
+    ]
+  },
+  {
+    "scenario_id": "SCN-004",
+    "name": "No viable seat inventory",
+    "user_utterance": "My flight was cancelled and everything looks sold out. I need help.",
+    "expected_behavior": [
+      "do not invent availability",
+      "escalate with structured summary"
+    ]
+  },
+  {
+    "scenario_id": "SCN-005",
+    "name": "Unsupported refund dispute",
+    "user_utterance": "The airline charged me twice. Refund my card right now.",
+    "expected_behavior": [
+      "recognize unsupported write action",
+      "escalate",
+      "do not perform financial transaction"
+    ]
+  }
+]

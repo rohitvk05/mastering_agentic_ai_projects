@@ -1,0 +1,110 @@
+[
+  {
+    "traveler_id": "TR001",
+    "name": "Alex Morgan",
+    "loyalty_status": "Gold",
+    "preferences": [
+      "avoid tight connections",
+      "window seat"
+    ]
+  },
+  {
+    "traveler_id": "TR002",
+    "name": "Priya Shah",
+    "loyalty_status": "None",
+    "preferences": [
+      "morning flights",
+      "avoid tight connections"
+    ]
+  },
+  {
+    "traveler_id": "TR003",
+    "name": "Daniel Kim",
+    "loyalty_status": "Platinum",
+    "preferences": [
+      "avoid tight connections",
+      "window seat"
+    ]
+  },
+  {
+    "traveler_id": "TR004",
+    "name": "Maya Patel",
+    "loyalty_status": "None",
+    "preferences": [
+      "aisle seat",
+      "nonstop preferred"
+    ]
+  },
+  {
+    "traveler_id": "TR005",
+    "name": "Jordan Lee",
+    "loyalty_status": "Platinum",
+    "preferences": [
+      "window seat",
+      "lowest cost"
+    ]
+  },
+  {
+    "traveler_id": "TR006",
+    "name": "Sophia Chen",
+    "loyalty_status": "Gold",
+    "preferences": [
+      "aisle seat",
+      "lowest cost"
+    ]
+  },
+  {
+    "traveler_id": "TR007",
+    "name": "Ethan Brown",
+    "loyalty_status": "Platinum",
+    "preferences": [
+      "avoid tight connections",
+      "nonstop preferred"
+    ]
+  },
+  {
+    "traveler_id": "TR008",
+    "name": "Ava Martinez",
+    "loyalty_status": "None",
+    "preferences": [
+      "nonstop preferred",
+      "aisle seat"
+    ]
+  },
+  {
+    "traveler_id": "TR009",
+    "name": "Noah Wilson",
+    "loyalty_status": "Gold",
+    "preferences": [
+      "morning flights",
+      "avoid tight connections"
+    ]
+  },
+  {
+    "traveler_id": "TR010",
+    "name": "Liam Davis",
+    "loyalty_status": "Platinum",
+    "preferences": [
+      "aisle seat",
+      "avoid tight connections"
+    ]
+  },
+  {
+    "traveler_id": "TR011",
+    "name": "Emma Thompson",
+    "loyalty_status": "Silver",
+    "preferences": [
+      "window seat",
+      "avoid tight connections"
+    ]
+  },
+  {
+    "traveler_id": "TR012",
+    "name": "Olivia Garcia",
+    "loyalty_status": "Gold",
+    "preferences": [
+      "aisle seat",
+      "morning flights"
+    ]
+  }
+]

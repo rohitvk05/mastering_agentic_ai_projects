@@ -1,0 +1,186 @@
+{
+  "SFO": {
+    "city": "San Francisco",
+    "state": "CA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [
+      "OAK",
+      "SJC"
+    ],
+    "min_connection_minutes": 45
+  },
+  "OAK": {
+    "city": "Oakland",
+    "state": "CA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [
+      "SFO",
+      "SJC"
+    ],
+    "min_connection_minutes": 40
+  },
+  "SJC": {
+    "city": "San Jose",
+    "state": "CA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [
+      "SFO",
+      "OAK"
+    ],
+    "min_connection_minutes": 40
+  },
+  "LAS": {
+    "city": "Las Vegas",
+    "state": "NV",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [],
+    "min_connection_minutes": 45
+  },
+  "LAX": {
+    "city": "Los Angeles",
+    "state": "CA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [
+      "BUR",
+      "SNA"
+    ],
+    "min_connection_minutes": 50
+  },
+  "BUR": {
+    "city": "Burbank",
+    "state": "CA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [
+      "LAX"
+    ],
+    "min_connection_minutes": 35
+  },
+  "SNA": {
+    "city": "Santa Ana",
+    "state": "CA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [
+      "LAX"
+    ],
+    "min_connection_minutes": 40
+  },
+  "SEA": {
+    "city": "Seattle",
+    "state": "WA",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [],
+    "min_connection_minutes": 45
+  },
+  "PDX": {
+    "city": "Portland",
+    "state": "OR",
+    "timezone": "America/Los_Angeles",
+    "nearby_airports": [],
+    "min_connection_minutes": 40
+  },
+  "DEN": {
+    "city": "Denver",
+    "state": "CO",
+    "timezone": "America/Denver",
+    "nearby_airports": [],
+    "min_connection_minutes": 55
+  },
+  "PHX": {
+    "city": "Phoenix",
+    "state": "AZ",
+    "timezone": "America/Phoenix",
+    "nearby_airports": [],
+    "min_connection_minutes": 50
+  },
+  "DFW": {
+    "city": "Dallas",
+    "state": "TX",
+    "timezone": "America/Chicago",
+    "nearby_airports": [
+      "DAL"
+    ],
+    "min_connection_minutes": 55
+  },
+  "DAL": {
+    "city": "Dallas",
+    "state": "TX",
+    "timezone": "America/Chicago",
+    "nearby_airports": [
+      "DFW"
+    ],
+    "min_connection_minutes": 40
+  },
+  "ORD": {
+    "city": "Chicago",
+    "state": "IL",
+    "timezone": "America/Chicago",
+    "nearby_airports": [
+      "MDW"
+    ],
+    "min_connection_minutes": 60
+  },
+  "MDW": {
+    "city": "Chicago",
+    "state": "IL",
+    "timezone": "America/Chicago",
+    "nearby_airports": [
+      "ORD"
+    ],
+    "min_connection_minutes": 45
+  },
+  "JFK": {
+    "city": "New York",
+    "state": "NY",
+    "timezone": "America/New_York",
+    "nearby_airports": [
+      "LGA",
+      "EWR"
+    ],
+    "min_connection_minutes": 60
+  },
+  "LGA": {
+    "city": "New York",
+    "state": "NY",
+    "timezone": "America/New_York",
+    "nearby_airports": [
+      "JFK",
+      "EWR"
+    ],
+    "min_connection_minutes": 50
+  },
+  "EWR": {
+    "city": "Newark",
+    "state": "NJ",
+    "timezone": "America/New_York",
+    "nearby_airports": [
+      "JFK",
+      "LGA"
+    ],
+    "min_connection_minutes": 60
+  },
+  "BOS": {
+    "city": "Boston",
+    "state": "MA",
+    "timezone": "America/New_York",
+    "nearby_airports": [],
+    "min_connection_minutes": 50
+  },
+  "MIA": {
+    "city": "Miami",
+    "state": "FL",
+    "timezone": "America/New_York",
+    "nearby_airports": [
+      "FLL"
+    ],
+    "min_connection_minutes": 50
+  },
+  "FLL": {
+    "city": "Fort Lauderdale",
+    "state": "FL",
+    "timezone": "America/New_York",
+    "nearby_airports": [
+      "MIA"
+    ],
+    "min_connection_minutes": 45
+  }
+}
